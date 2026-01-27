@@ -1,0 +1,18 @@
+{
+    "@@locale": "en",
+    "appTitle": "Tharad",
+    "createNewAccount": "Create New Account",
+    "profileImage": "Profile Image",
+    "allowedFiles": "Allowed files: JPEG, PNG",
+    "maxSize": "Max size: 5MB",
+    "username": "Username",
+    "usernamePlaceholder": "thar22",
+    "email": "Email",
+    "emailPlaceholder": "Tharad@gmail.com",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "haveAccount": "Have an account? ",
+    "login": "Login",
+    "registrationSuccessful": "Registration Successful",
+    "registrationFailed": "Registration Failed"
+}

@@ -23,6 +23,7 @@ dependencies:
   dartz: ^0.10.1
   flutter_localizations:
       sdk: flutter
+  dotted_border: ^3.1.0
 
 
 dev_dependencies:
@@ -30,6 +31,9 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^5.0.0
+  build_runner: ^2.4.13
+  freezed: ^3.2.4
+  json_serializable: ^6.8.0
 
 flutter:
 
@@ -38,6 +42,17 @@ flutter:
   assets:
     - assets/app/
 
+  # Fonts
+  fonts:
+    - family: Tajawal
+      fonts:
+        - asset: assets/fonts/Tajawal-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Tajawal-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Tajawal-Bold.ttf
+          weight: 700
+    
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 
@@ -63,3 +78,8 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+
+flutter_intl:
+  enabled: true
+  arb_dir: lib/l10n
+  output_dir: lib/generated

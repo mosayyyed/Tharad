@@ -5,7 +5,7 @@ class AppRoutePaths {
 
   static String get loginScreen => '/login';
 
-  static String get signupScreen => '/signup';
+  static String get registerScreen => '/register';
 
   static String get otpVerificationScreen => '/otp-verification';
 

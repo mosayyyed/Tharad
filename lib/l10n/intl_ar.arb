@@ -1,0 +1,18 @@
+{
+    "@@locale": "ar",
+    "appTitle": "ثرد",
+    "createNewAccount": "إنشاء حساب جديد",
+    "profileImage": "الصورة الشخصية",
+    "allowedFiles": "الملفات المسموح بيها : JPEG , PNG",
+    "maxSize": "الحد الاقصي : 5MB",
+    "username": "اسم المستخدم",
+    "usernamePlaceholder": "thar22",
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "Tharad@gmail.com",
+    "password": "كلمة المرور",
+    "confirmPassword": "تأكيد كلمة المرور",
+    "haveAccount": "لديك حساب؟ ",
+    "login": "تسجيل الدخول",
+    "registrationSuccessful": "تم التسجيل بنجاح",
+    "registrationFailed": "فشل التسجيل"
+}

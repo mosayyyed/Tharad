@@ -4,7 +4,7 @@ class AppColors {
   // ---------- Primary Gradient ----------
   static const Color primaryStart = Color(0xFF54B7BB);
   static const Color primaryEnd = Color(0xFF265355);
-  static const Color primary = primaryStart;
+  static const Color primary = Color(0xFF265355);
 
   static const LinearGradient primaryGradient = LinearGradient(
     colors: [primaryStart, primaryEnd],
@@ -14,7 +14,7 @@ class AppColors {
 
   // ---------- Semantic Colors ----------
   static const Color error = Color(0xFFF44336);
-  static const Color success = Color(0xFF4CAF50);
+  static const Color success = Color(0xFF34C759);
   static const Color warning = Color(0xFFFFA000);
 
   // ---------- Neutrals ----------

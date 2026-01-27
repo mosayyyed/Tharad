@@ -14,5 +14,15 @@
     "haveAccount": "لديك حساب؟ ",
     "login": "تسجيل الدخول",
     "registrationSuccessful": "تم التسجيل بنجاح",
-    "registrationFailed": "فشل التسجيل"
+    "registrationFailed": "فشل التسجيل",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "هل نسيت كلمة المرور؟",
+    "dontHaveAccount": "ليس لديك حساب؟ ",
+    "createAccount": "إنشاء حساب جديد",
+    "loginSuccessful": "تم تسجيل الدخول بنجاح",
+    "loginFailed": "فشل تسجيل الدخول",
+    "language": "اللغة",
+    "arabic": "اللغة العربية",
+    "english": "English",
+    "apply": "تطبيق"
 }

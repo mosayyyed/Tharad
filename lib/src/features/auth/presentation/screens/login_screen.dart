@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tharad/src/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
+import 'package:tharad/src/features/auth/presentation/widgets/login_screen_body.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Login Screen')),
-      body: const Center(child: Text('This is the Login Screen')),
+    return BlocProvider(
+      create: (context) => LoginCubit(),
+      child: const LoginScreenBody(),
     );
   }
 }

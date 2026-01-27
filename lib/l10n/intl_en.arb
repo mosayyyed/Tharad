@@ -14,5 +14,15 @@
     "haveAccount": "Have an account? ",
     "login": "Login",
     "registrationSuccessful": "Registration Successful",
-    "registrationFailed": "Registration Failed"
+    "registrationFailed": "Registration Failed",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot Password?",
+    "dontHaveAccount": "Don't have an account? ",
+    "createAccount": "Create new account",
+    "loginSuccessful": "Login Successful",
+    "loginFailed": "Login Failed",
+    "language": "Language",
+    "arabic": "Arabic",
+    "english": "English",
+    "apply": "Apply"
 }

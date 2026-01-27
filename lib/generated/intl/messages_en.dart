@@ -26,16 +26,27 @@ class MessageLookup extends MessageLookupByLibrary {
       "Allowed files: JPEG, PNG",
     ),
     "appTitle": MessageLookupByLibrary.simpleMessage("Tharad"),
+    "apply": MessageLookupByLibrary.simpleMessage("Apply"),
+    "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "createAccount": MessageLookupByLibrary.simpleMessage("Create new account"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
+    ),
+    "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
+      "Don\'t have an account? ",
     ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Tharad@gmail.com",
     ),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account? "),
+    "language": MessageLookupByLibrary.simpleMessage("Language"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
+    "loginSuccessful": MessageLookupByLibrary.simpleMessage("Login Successful"),
     "maxSize": MessageLookupByLibrary.simpleMessage("Max size: 5MB"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "profileImage": MessageLookupByLibrary.simpleMessage("Profile Image"),
@@ -45,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "registrationSuccessful": MessageLookupByLibrary.simpleMessage(
       "Registration Successful",
     ),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "username": MessageLookupByLibrary.simpleMessage("Username"),
     "usernamePlaceholder": MessageLookupByLibrary.simpleMessage("thar22"),
   };

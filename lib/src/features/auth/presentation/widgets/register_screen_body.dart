@@ -3,8 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tharad/generated/l10n.dart';
 import 'package:tharad/src/core/theming/theming/app_text_styles.dart';
-import 'package:tharad/src/features/auth/presentation/cubit/register_cubit.dart';
-import 'package:tharad/src/features/auth/presentation/cubit/register_state.dart';
+import 'package:tharad/src/core/utils/custom_snackbar.dart';
+import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_cubit.dart';
+import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_state.dart';
 import 'package:tharad/src/features/auth/presentation/widgets/custom_text_form_field.dart';
 import 'package:tharad/src/features/auth/presentation/widgets/gradient_button.dart';
 import 'package:tharad/src/features/auth/presentation/widgets/login_link_text.dart';
@@ -31,14 +32,10 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
           listener: (context, state) {
             state.maybeWhen(
               success: (message) {
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text(message)));
+                CustomSnackBar.showSuccess(context, message);
               },
               failure: (error) {
-                ScaffoldMessenger.of(
-                  context,
-                ).showSnackBar(SnackBar(content: Text(error)));
+                CustomSnackBar.showError(context, error);
               },
               orElse: () {},
             );

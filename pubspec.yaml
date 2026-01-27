@@ -24,6 +24,7 @@ dependencies:
   flutter_localizations:
       sdk: flutter
   dotted_border: ^3.1.0
+  pinput: ^5.0.0
 
 
 dev_dependencies:

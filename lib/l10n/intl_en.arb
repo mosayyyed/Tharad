@@ -24,5 +24,12 @@
     "language": "Language",
     "arabic": "Arabic",
     "english": "English",
-    "apply": "Apply"
+    "apply": "Apply",
+    "otpVerification": "Verification Code",
+    "otpDescription": "To complete opening your account, enter the verification code sent via email",
+    "didntReceiveCode": "Didn't receive code? ",
+    "resendCode": "Resend",
+    "continueButton": "Continue",
+    "otpSuccessful": "Verification Successful",
+    "otpFailed": "Verification Failed"
 }

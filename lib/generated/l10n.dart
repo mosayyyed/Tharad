@@ -248,6 +248,66 @@ class S {
   String get apply {
     return Intl.message('Apply', name: 'apply', desc: '', args: []);
   }
+
+  /// `Verification Code`
+  String get otpVerification {
+    return Intl.message(
+      'Verification Code',
+      name: 'otpVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To complete opening your account, enter the verification code sent via email`
+  String get otpDescription {
+    return Intl.message(
+      'To complete opening your account, enter the verification code sent via email',
+      name: 'otpDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn't receive code? `
+  String get didntReceiveCode {
+    return Intl.message(
+      'Didn\'t receive code? ',
+      name: 'didntReceiveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend`
+  String get resendCode {
+    return Intl.message('Resend', name: 'resendCode', desc: '', args: []);
+  }
+
+  /// `Continue`
+  String get continueButton {
+    return Intl.message('Continue', name: 'continueButton', desc: '', args: []);
+  }
+
+  /// `Verification Successful`
+  String get otpSuccessful {
+    return Intl.message(
+      'Verification Successful',
+      name: 'otpSuccessful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verification Failed`
+  String get otpFailed {
+    return Intl.message(
+      'Verification Failed',
+      name: 'otpFailed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

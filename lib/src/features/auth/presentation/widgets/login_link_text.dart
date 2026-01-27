@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:tharad/generated/l10n.dart';
-import 'package:tharad/src/core/theming/theming/app_text_styles.dart';
+import 'package:tharad/src/core/theming/app_text_styles.dart';
 
 class LoginLinkText extends StatelessWidget {
   final VoidCallback? onTap;

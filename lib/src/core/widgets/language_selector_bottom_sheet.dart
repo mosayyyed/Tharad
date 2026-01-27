@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tharad/generated/l10n.dart';
 import 'package:tharad/src/core/cubits/locale_cubit.dart';
-import 'package:tharad/src/core/theming/theming/app_colors.dart';
-import 'package:tharad/src/core/theming/theming/app_text_styles.dart';
+import 'package:tharad/src/core/theming/app_colors.dart';
+import 'package:tharad/src/core/theming/app_text_styles.dart';
 import 'package:tharad/src/features/auth/presentation/widgets/gradient_button.dart';
 
 /// A bottom sheet that allows users to select and change the app language.

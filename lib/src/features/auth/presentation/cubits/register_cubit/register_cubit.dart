@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tharad/src/features/auth/presentation/cubit/register_state.dart';
+import 'package:tharad/generated/l10n.dart';
+import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit() : super(const RegisterState.initial());
@@ -18,12 +19,12 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   void togglePasswordVisibility() {
     isObscurePassword = !isObscurePassword;
-    emit(state); 
+    emit(state);
   }
 
   void toggleConfirmPasswordVisibility() {
     isObscureConfirmPassword = !isObscureConfirmPassword;
-    emit(state); 
+    emit(state);
   }
 
   Future<void> handleImageUpload() async {
@@ -36,9 +37,8 @@ class RegisterCubit extends Cubit<RegisterState> {
 
       try {
         // TODO: Implement register logic
-        await Future.delayed(const Duration(seconds: 2)); // Simulate API call
 
-        emit(const RegisterState.success('Registration successful'));
+        emit(RegisterState.success(S.current.registrationSuccessful));
       } catch (e) {
         emit(RegisterState.failure(e.toString()));
       }

@@ -26,16 +26,29 @@ class MessageLookup extends MessageLookupByLibrary {
       "الملفات المسموح بيها : JPEG , PNG",
     ),
     "appTitle": MessageLookupByLibrary.simpleMessage("ثرد"),
+    "apply": MessageLookupByLibrary.simpleMessage("تطبيق"),
+    "arabic": MessageLookupByLibrary.simpleMessage("اللغة العربية"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
+    "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
       "Tharad@gmail.com",
     ),
+    "english": MessageLookupByLibrary.simpleMessage("English"),
+    "forgotPassword": MessageLookupByLibrary.simpleMessage(
+      "هل نسيت كلمة المرور؟",
+    ),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟ "),
+    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "loginFailed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
+    "loginSuccessful": MessageLookupByLibrary.simpleMessage(
+      "تم تسجيل الدخول بنجاح",
+    ),
     "maxSize": MessageLookupByLibrary.simpleMessage("الحد الاقصي : 5MB"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "profileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
@@ -43,6 +56,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "registrationSuccessful": MessageLookupByLibrary.simpleMessage(
       "تم التسجيل بنجاح",
     ),
+    "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "usernamePlaceholder": MessageLookupByLibrary.simpleMessage("thar22"),
   };

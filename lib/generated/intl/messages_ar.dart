@@ -31,8 +31,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "confirmPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور",
     ),
+    "continueButton": MessageLookupByLibrary.simpleMessage("المتابعة"),
     "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب جديد"),
+    "didntReceiveCode": MessageLookupByLibrary.simpleMessage("لم يصلك رمز ؟ "),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لديك حساب؟ "),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "emailPlaceholder": MessageLookupByLibrary.simpleMessage(
@@ -50,6 +52,12 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم تسجيل الدخول بنجاح",
     ),
     "maxSize": MessageLookupByLibrary.simpleMessage("الحد الاقصي : 5MB"),
+    "otpDescription": MessageLookupByLibrary.simpleMessage(
+      "لاستكمال فتح حسابك ادخل رمز التحقق المرسل عبر البريد الإلكتروني",
+    ),
+    "otpFailed": MessageLookupByLibrary.simpleMessage("فشل التحقق"),
+    "otpSuccessful": MessageLookupByLibrary.simpleMessage("تم التحقق بنجاح"),
+    "otpVerification": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "profileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "registrationFailed": MessageLookupByLibrary.simpleMessage("فشل التسجيل"),
@@ -57,6 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "تم التسجيل بنجاح",
     ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
+    "resendCode": MessageLookupByLibrary.simpleMessage("إعادة ارسال"),
     "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "usernamePlaceholder": MessageLookupByLibrary.simpleMessage("thar22"),
   };

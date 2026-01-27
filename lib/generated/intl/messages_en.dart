@@ -29,9 +29,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "apply": MessageLookupByLibrary.simpleMessage("Apply"),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
     "confirmPassword": MessageLookupByLibrary.simpleMessage("Confirm Password"),
+    "continueButton": MessageLookupByLibrary.simpleMessage("Continue"),
     "createAccount": MessageLookupByLibrary.simpleMessage("Create new account"),
     "createNewAccount": MessageLookupByLibrary.simpleMessage(
       "Create New Account",
+    ),
+    "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
+      "Didn\'t receive code? ",
     ),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage(
       "Don\'t have an account? ",
@@ -48,6 +52,16 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "loginSuccessful": MessageLookupByLibrary.simpleMessage("Login Successful"),
     "maxSize": MessageLookupByLibrary.simpleMessage("Max size: 5MB"),
+    "otpDescription": MessageLookupByLibrary.simpleMessage(
+      "To complete opening your account, enter the verification code sent via email",
+    ),
+    "otpFailed": MessageLookupByLibrary.simpleMessage("Verification Failed"),
+    "otpSuccessful": MessageLookupByLibrary.simpleMessage(
+      "Verification Successful",
+    ),
+    "otpVerification": MessageLookupByLibrary.simpleMessage(
+      "Verification Code",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "profileImage": MessageLookupByLibrary.simpleMessage("Profile Image"),
     "registrationFailed": MessageLookupByLibrary.simpleMessage(
@@ -57,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Registration Successful",
     ),
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
+    "resendCode": MessageLookupByLibrary.simpleMessage("Resend"),
     "username": MessageLookupByLibrary.simpleMessage("Username"),
     "usernamePlaceholder": MessageLookupByLibrary.simpleMessage("thar22"),
   };

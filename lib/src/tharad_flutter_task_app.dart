@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tharad/generated/l10n.dart';
 import 'package:tharad/src/core/cubits/locale_cubit.dart';
 import 'package:tharad/src/core/routing/app_router.dart';
-import 'package:tharad/src/core/theming/theming/app_themes.dart';
+import 'package:tharad/src/core/theming/app_themes.dart';
 
 class TharadFlutterTaskApp extends StatelessWidget {
   const TharadFlutterTaskApp({super.key});

@@ -2,8 +2,8 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tharad/generated/l10n.dart';
-import 'package:tharad/src/core/theming/theming/app_colors.dart';
-import 'package:tharad/src/core/theming/theming/app_text_styles.dart';
+import 'package:tharad/src/core/theming/app_colors.dart';
+import 'package:tharad/src/core/theming/app_text_styles.dart';
 
 class ProfileImageUploadField extends StatelessWidget {
   final VoidCallback? onTap;

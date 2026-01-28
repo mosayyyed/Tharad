@@ -44,9 +44,10 @@ class HomeScreenBody extends StatelessWidget {
                           color: const Color(0xFFE9EEEE).withOpacity(0.2),
                           borderRadius: BorderRadius.circular(100.r),
                         ),
-                        child: Icon(
-                          Icons.notifications_none,
-                          size: 16.w,
+                        child: SvgPicture.asset(
+                          'assets/icons/notification.svg',
+                          width: 16.w,
+                          height: 16.w,
                           color: Colors.white,
                         ),
                       ),

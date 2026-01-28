@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:tharad/src/core/cubits/locale_cubit.dart';
 import 'package:tharad/src/core/extensions/context_extension.dart';
 import 'package:tharad/src/core/theming/app_colors.dart';
@@ -24,7 +25,12 @@ class LanguageButton extends StatelessWidget {
                 builder: (context) => const LanguageSelectorBottomSheet(),
               );
             },
-            icon: Icon(Icons.language, size: 18.sp, color: AppColors.primary),
+            icon: SvgPicture.asset(
+              'assets/icons/global.svg',
+              width: 18.sp,
+              height: 18.sp,
+              color: AppColors.primary,
+            ),
             label: Text(
               locale.languageCode == 'en' ? 'العربية' : 'English',
               style: AppTextStyles.bodyMedium.copyWith(

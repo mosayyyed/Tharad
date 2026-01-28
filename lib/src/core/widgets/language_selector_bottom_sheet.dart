@@ -23,7 +23,7 @@ class _LanguageSelectorBottomSheetState
     extends State<LanguageSelectorBottomSheet> {
   late String _selectedLanguageCode;
 
-  static const _languageNames = {'ar': 'اللغة العربية', 'en': 'English'};
+  static const _languageNames = {'ar': 'العربية', 'en': 'English'};
 
   @override
   void initState() {

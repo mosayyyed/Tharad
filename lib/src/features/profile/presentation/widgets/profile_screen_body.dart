@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:tharad/generated/l10n.dart';
 import 'package:tharad/src/core/theming/app_colors.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
@@ -49,9 +50,10 @@ class _ProfileScreenBodyState extends State<ProfileScreenBody> {
                       color: const Color(0xFFE9EEEE).withOpacity(0.2),
                       borderRadius: BorderRadius.circular(100.r),
                     ),
-                    child: Icon(
-                      Icons.notifications_none,
-                      size: 16.w,
+                    child: SvgPicture.asset(
+                      'assets/icons/notification.svg',
+                      width: 16.w,
+                      height: 16.w,
                       color: Colors.white,
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:tharad/generated/l10n.dart';
 import 'package:tharad/src/features/layout/presentation/cubits/layout_cubit/layout_cubit.dart';
 import 'package:tharad/src/features/layout/presentation/cubits/layout_cubit/layout_state.dart';
@@ -25,13 +26,13 @@ class CustomBottomNavigationBar extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               _NavItem(
-                icon: Icons.home_outlined,
+                icon: 'assets/icons/home.svg',
                 label: S.of(context).home,
                 isSelected: state.selectedIndex == 0,
                 onTap: () => context.read<LayoutCubit>().changeIndex(0),
               ),
               _NavItem(
-                icon: Icons.person_outline,
+                icon: 'assets/icons/profile-circle.svg',
                 label: S.of(context).myAccount,
                 isSelected: state.selectedIndex == 1,
                 onTap: () => context.read<LayoutCubit>().changeIndex(1),
@@ -45,7 +46,7 @@ class CustomBottomNavigationBar extends StatelessWidget {
 }
 
 class _NavItem extends StatelessWidget {
-  final IconData icon;
+  final String icon;
   final String label;
   final bool isSelected;
   final VoidCallback onTap;
@@ -65,9 +66,10 @@ class _NavItem extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(
+            SvgPicture.asset(
               icon,
-              size: 24.w,
+              width: 24.w,
+              height: 24.w,
               color: isSelected
                   ? const Color(0xFF2C6062)
                   : const Color(0xFFADADAC),

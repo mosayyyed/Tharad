@@ -1,6 +1,7 @@
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:tharad/generated/l10n.dart';
 import 'package:tharad/src/core/theming/app_colors.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
@@ -42,9 +43,10 @@ class ProfileImageUploadField extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Icon(
-                    Icons.camera_alt_outlined,
-                    size: 24.sp,
+                  SvgPicture.asset(
+                    'assets/icons/camera.svg',
+                    width: 24.sp,
+                    height: 24.sp,
                     color: const Color(0xFF42867B),
                   ),
                   SizedBox(height: 6.h),

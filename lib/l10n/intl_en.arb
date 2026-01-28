@@ -31,5 +31,22 @@
     "resendCode": "Resend",
     "continueButton": "Continue",
     "otpSuccessful": "Verification Successful",
-    "otpFailed": "Verification Failed"
+    "otpFailed": "Verification Failed",
+    "home": "Home",
+    "myAccount": "My Account",
+    "welcomeMessage": "Welcome Tharad Tech!",
+    "trainingTitle": "Flutter training to build real mobile applications",
+    "aboutTraining": "About Training",
+    "workNature": "Work Nature During Training",
+    "aboutTrainingDescription": "Flutter training is not a traditional educational course, it is a practical program designed to prepare the trainee to actually work on real projects within the company.\nDuring the training period, the trainee will be part of the work team, dealing with real code, real requirements, and daily problems solved in existing projects, not just experimental applications or learning examples.\nThe training depends on the trainee:\n• Understands the way of work inside the company\n• Commits to professional code writing standards\n• Deals with Git and version control\n• Works within a team and receives continuous feedback\nThe main goal of the training is to transform the trainee from a learner level to a Flutter developer capable of joining any project and working on it confidently.",
+    "workNatureItem1": "Participating in the development of real mobile applications",
+    "workNatureItem2": "Implementing required features in existing projects",
+    "workNatureItem3": "Dealing with real APIs and backends",
+    "workNatureItem4": "Fixing bugs and improving performance",
+    "workNatureItem5": "Committing to clean code and clear architecture",
+    "profileTitle": "Profile",
+    "oldPassword": "Old Password",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password",
+    "saveChanges": "Save Changes"
 }

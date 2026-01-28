@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:pinput/pinput.dart';
 import 'package:tharad/generated/l10n.dart';
+import 'package:tharad/src/core/routing/app_router_paths.dart';
 import 'package:tharad/src/core/theming/app_colors.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
 import 'package:tharad/src/core/utils/custom_snackbar.dart';
@@ -105,7 +107,10 @@ class OtpVerificationScreenBody extends StatelessWidget {
                 return GradientButton(
                   onPressed: isLoading
                       ? null
-                      : () => context.read<OtpCubit>().verifyOtp(),
+                      : () {
+                          context.read<OtpCubit>().verifyOtp();
+                          GoRouter.of(context).push(AppRoutePaths.layoutScreen);
+                        },
                   text: S.of(context).continueButton,
                 );
               },

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:tharad/generated/l10n.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/otp_cubit/otp_state.dart';
 
 class OtpCubit extends Cubit<OtpState> {
@@ -43,14 +44,14 @@ class OtpCubit extends Cubit<OtpState> {
   Future<void> verifyOtp() async {
     final code = otpController.text;
     if (code.length != 5) {
-      emit(const OtpState.failure('Please enter complete verification code'));
+      emit(OtpState.failure(S.current.otpFailed));
       return;
     }
 
     emit(const OtpState.loading());
     try {
       await Future.delayed(const Duration(seconds: 2));
-      emit(const OtpState.success('Verification successful'));
+      emit(OtpState.success(S.current.otpSuccessful));
     } catch (e) {
       emit(OtpState.failure(e.toString()));
     }

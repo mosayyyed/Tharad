@@ -33,9 +33,6 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
         child: BlocConsumer<RegisterCubit, RegisterState>(
           listener: (context, state) {
             state.maybeWhen(
-              success: (message) {
-                CustomSnackBar.showSuccess(context, message);
-              },
               failure: (error) {
                 CustomSnackBar.showError(context, error);
               },
@@ -130,7 +127,6 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                       LoginLinkText(
                         onTap: () {
                           GoRouter.of(context).push(AppRoutePaths.loginScreen);
-                          // Navigate to login
                         },
                       ),
                       SizedBox(height: 40.h),

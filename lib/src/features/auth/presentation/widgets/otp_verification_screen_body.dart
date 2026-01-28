@@ -5,6 +5,7 @@ import 'package:pinput/pinput.dart';
 import 'package:tharad/generated/l10n.dart';
 import 'package:tharad/src/core/theming/app_colors.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
+import 'package:tharad/src/core/utils/custom_snackbar.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/otp_cubit/otp_cubit.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/otp_cubit/otp_state.dart';
 import 'package:tharad/src/features/auth/presentation/widgets/gradient_button.dart';
@@ -87,18 +88,10 @@ class OtpVerificationScreenBody extends StatelessWidget {
               listener: (context, state) {
                 state.maybeWhen(
                   success: (message) {
-                    // TODO: Navigate to next screen
-                    ScaffoldMessenger.of(
-                      context,
-                    ).showSnackBar(SnackBar(content: Text(message)));
+                    CustomSnackBar.showSuccess(context, message);
                   },
                   failure: (error) {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
-                        content: Text(error),
-                        backgroundColor: Colors.red,
-                      ),
-                    );
+                    CustomSnackBar.showError(context, error);
                   },
                   orElse: () {},
                 );

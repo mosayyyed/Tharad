@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tharad/generated/l10n.dart';
 import 'package:tharad/src/core/extensions/context_extension.dart';
 import 'package:tharad/src/core/cubits/locale_cubit.dart';
+import 'package:tharad/src/core/routing/app_router_paths.dart';
 import 'package:tharad/src/core/theming/app_colors.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
 import 'package:tharad/src/core/utils/custom_snackbar.dart';
@@ -34,9 +36,6 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
         child: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {
             state.maybeWhen(
-              success: (message) {
-                CustomSnackBar.showSuccess(context, message);
-              },
               failure: (error) {
                 CustomSnackBar.showError(context, error);
               },
@@ -171,13 +170,20 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                       // Login Button
                       GradientButton(
                         text: S.of(context).login,
-                        onPressed: isLoading ? null : cubit.login,
+                        onPressed: () {
+                          if (!isLoading) {
+                            cubit.login();
+                            GoRouter.of(
+                              context,
+                            ).push(AppRoutePaths.otpVerificationScreen);
+                          }
+                        },
                       ),
                       SizedBox(height: 12.h),
                       // Register Link
                       RegisterLinkText(
                         onTap: () {
-                          // Navigate to register
+                          GoRouter.of(context).go(AppRoutePaths.registerScreen);
                         },
                       ),
                       SizedBox(height: 40.h),

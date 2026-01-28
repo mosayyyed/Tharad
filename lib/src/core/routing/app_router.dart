@@ -7,7 +7,7 @@ import 'package:tharad/src/features/splash/presentation/screens/splash_screen.da
 
 abstract class AppRouter {
   static final GoRouter router = GoRouter(
-    initialLocation: AppRoutePaths.otpVerificationScreen,
+    initialLocation: AppRoutePaths.registerScreen,
     routes: [
       GoRoute(
         path: AppRoutePaths.splashScreen,

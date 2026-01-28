@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:tharad/generated/l10n.dart';
+import 'package:tharad/src/core/routing/app_router_paths.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
 import 'package:tharad/src/core/utils/custom_snackbar.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_cubit.dart';
@@ -127,6 +129,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                       // Login Link
                       LoginLinkText(
                         onTap: () {
+                          GoRouter.of(context).push(AppRoutePaths.loginScreen);
                           // Navigate to login
                         },
                       ),

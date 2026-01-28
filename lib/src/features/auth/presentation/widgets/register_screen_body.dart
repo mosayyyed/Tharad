@@ -120,7 +120,14 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                       // Register Button
                       GradientButton(
                         text: S.of(context).createNewAccount,
-                        onPressed: isLoading ? null : cubit.register,
+                        onPressed: isLoading
+                            ? null
+                            : () {
+                                cubit.register();
+                                GoRouter.of(
+                                  context,
+                                ).push(AppRoutePaths.otpVerificationScreen);
+                              },
                       ),
                       SizedBox(height: 12.h),
                       // Login Link

@@ -3,13 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tharad/generated/l10n.dart';
-import 'package:tharad/src/core/extensions/context_extension.dart';
-import 'package:tharad/src/core/cubits/locale_cubit.dart';
 import 'package:tharad/src/core/routing/app_router_paths.dart';
 import 'package:tharad/src/core/theming/app_colors.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
 import 'package:tharad/src/core/utils/custom_snackbar.dart';
-import 'package:tharad/src/core/widgets/language_selector_bottom_sheet.dart';
+import 'package:tharad/src/core/widgets/language_button.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/login_cubit/login_state.dart';
 import 'package:tharad/src/features/auth/presentation/widgets/custom_checkbox.dart';
@@ -56,42 +54,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                   child: Column(
                     children: [
                       // Language Button
-                      Align(
-                        alignment: context.isRTL
-                            ? Alignment.centerLeft
-                            : Alignment.centerRight,
-                        child: BlocBuilder<LocaleCubit, Locale>(
-                          builder: (context, locale) {
-                            return TextButton.icon(
-                              onPressed: () {
-                                showModalBottomSheet(
-                                  context: context,
-                                  backgroundColor: Colors.transparent,
-                                  builder: (context) {
-                                    return const LanguageSelectorBottomSheet();
-                                  },
-                                );
-                              },
-                              icon: Icon(
-                                Icons.language,
-                                size: 18.sp,
-                                color: AppColors.primary,
-                              ),
-                              label: Text(
-                                locale.languageCode == 'ar'
-                                    ? 'العربية'
-                                    : 'English',
-                                style: AppTextStyles.bodyMedium.copyWith(
-                                  color: AppColors.primary,
-                                ),
-                              ),
-                              style: TextButton.styleFrom(
-                                minimumSize: Size.zero,
-                              ),
-                            );
-                          },
-                        ),
-                      ),
+                      const LanguageButton(),
                       SizedBox(height: 100.h),
                       // Logo
                       Image.asset(

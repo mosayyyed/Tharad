@@ -34,6 +34,16 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
         child: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {
             state.maybeWhen(
+              success: (message, token) {
+                CustomSnackBar.showSuccess(context, message);
+                GoRouter.of(context).go(AppRoutePaths.layoutScreen);
+              },
+              otpRequired: (message, email) {
+                CustomSnackBar.showInfo(context, message);
+                GoRouter.of(
+                  context,
+                ).push('${AppRoutePaths.otpVerificationScreen}?email=$email');
+              },
               failure: (error) {
                 CustomSnackBar.showError(context, error);
               },
@@ -133,14 +143,8 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                       // Login Button
                       GradientButton(
                         text: S.of(context).login,
-                        onPressed: () {
-                          if (!isLoading) {
-                            cubit.login();
-                            GoRouter.of(
-                              context,
-                            ).push(AppRoutePaths.otpVerificationScreen);
-                          }
-                        },
+                        isLoading: isLoading,
+                        onPressed: isLoading ? null : () => cubit.login(),
                       ),
                       SizedBox(height: 12.h),
                       // Register Link

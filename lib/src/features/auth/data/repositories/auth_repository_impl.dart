@@ -12,7 +12,6 @@ import '../models/login_request_model.dart';
 import '../models/register_request_model.dart';
 import '../models/verify_otp_request_model.dart';
 
-/// Auth repository implementation
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource _remoteDataSource;
   final SharedPreferences _prefs;
@@ -40,7 +39,6 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       final response = await _remoteDataSource.login(request);
 
-      // Save token if login successful
       if (response.status == 'success' && response.data?.token != null) {
         await saveAuthToken(response.data!.token);
       }
@@ -72,7 +70,6 @@ class AuthRepositoryImpl implements AuthRepository {
     try {
       final response = await _remoteDataSource.logout();
 
-      // Clear local storage on logout
       if (response.status == 'success') {
         await removeAuthToken();
       }

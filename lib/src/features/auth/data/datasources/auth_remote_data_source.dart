@@ -9,25 +9,18 @@ import '../models/login_request_model.dart';
 import '../models/register_request_model.dart';
 import '../models/verify_otp_request_model.dart';
 
-/// Auth remote data source contract
 abstract class AuthRemoteDataSource {
-  /// Register user
   Future<RegisterResponseModel> register(RegisterRequestModel request);
 
-  /// Login user
   Future<LoginResponseModel> login(LoginRequestModel request);
 
-  /// Verify OTP
   Future<MessageResponseModel> verifyOtp(VerifyOtpRequestModel request);
 
-  /// Logout
   Future<MessageResponseModel> logout();
 
-  /// Get user profile
   Future<ProfileResponseModel> getProfile();
 }
 
-/// Auth remote data source implementation
 class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   final DioClient _dioClient;
 
@@ -37,7 +30,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   Future<RegisterResponseModel> register(RegisterRequestModel request) async {
     final formData = FormData();
 
-    // Add text fields
     formData.fields.addAll([
       MapEntry('email', request.email),
       MapEntry('username', request.username),
@@ -45,7 +37,6 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
       MapEntry('password_confirmation', request.passwordConfirmation),
     ]);
 
-    // Add profile image if exists
     if (request.profileImage != null && request.profileImage!.isNotEmpty) {
       final file = File(request.profileImage!);
       if (await file.exists()) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tharad/src/core/errors/failures.dart';
 import 'package:tharad/src/features/auth/data/models/login_request_model.dart';
-import 'package:tharad/src/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:tharad/src/features/auth/data/repositories/auth_repository.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/login_cubit/login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {

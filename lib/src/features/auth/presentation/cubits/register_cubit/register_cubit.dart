@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tharad/src/features/auth/data/models/register_request_model.dart';
-import 'package:tharad/src/features/auth/data/repositories/auth_repository_impl.dart';
+import 'package:tharad/src/features/auth/data/repositories/auth_repository.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {

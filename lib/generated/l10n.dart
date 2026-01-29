@@ -743,6 +743,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Image size exceeds {maxSize}MB. Please choose a smaller image.`
+  String imageTooLarge(double maxSize) {
+    return Intl.message(
+      'Image size exceeds ${maxSize}MB. Please choose a smaller image.',
+      name: 'imageTooLarge',
+      desc: '',
+      args: [maxSize],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -27,19 +27,26 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
   bool isObscurePassword = true;
   bool isObscureConfirmPassword = true;
   String? _selectedImagePath;
+  String? _imageError;
 
   final ImagePickerService _imagePickerService = sl<ImagePickerService>();
 
   void _pickImage() {
-    _imagePickerService.showImageSourceBottomSheetWithCallback(
+    setState(() => _imageError = null);
+
+    _imagePickerService.showImageSourceBottomSheet(
       context,
       onImageSelected: (image) {
         if (image != null) {
           setState(() {
             _selectedImagePath = image.path;
+            _imageError = null;
           });
           context.read<RegisterCubit>().setProfileImage(image.path);
         }
+      },
+      onError: (error) {
+        setState(() => _imageError = error);
       },
     );
   }
@@ -47,6 +54,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
   void _removeImage() {
     setState(() {
       _selectedImagePath = null;
+      _imageError = null;
     });
     context.read<RegisterCubit>().setProfileImage(null);
   }
@@ -110,6 +118,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                         imagePath: _selectedImagePath,
                         onTap: _pickImage,
                         onRemove: _removeImage,
+                        errorText: _imageError,
                       ),
                       SizedBox(height: 12.h),
                       // Username Field

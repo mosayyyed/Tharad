@@ -22,13 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(fieldName) => "${fieldName} مطلوب";
 
-  static String m1(length) => "يرجى إدخال رمز مكون من ${length} أرقام";
+  static String m1(maxSize) =>
+      "حجم الصورة يتجاوز ${maxSize} ميجابايت. يرجى اختيار صورة أصغر.";
 
-  static String m2(max) => "يجب ألا يتجاوز ${max} حرف";
+  static String m2(length) => "يرجى إدخال رمز مكون من ${length} أرقام";
 
-  static String m3(min) => "يجب أن يكون ${min} أحرف على الأقل";
+  static String m3(max) => "يجب ألا يتجاوز ${max} حرف";
 
-  static String m4(minLength) =>
+  static String m4(min) => "يجب أن يكون ${min} أحرف على الأقل";
+
+  static String m5(minLength) =>
       "كلمة المرور يجب أن تكون ${minLength} أحرف على الأقل";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -80,10 +83,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟ "),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "imageTooLarge": m1,
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال بريد إلكتروني صالح",
     ),
-    "invalidOtp": m1,
+    "invalidOtp": m2,
     "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "يرجى إدخال رقم هاتف صالح",
     ),
@@ -97,9 +101,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginSuccessful": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح",
     ),
-    "maxLengthError": m2,
+    "maxLengthError": m3,
     "maxSize": MessageLookupByLibrary.simpleMessage("الحد الاقصي : 5MB"),
-    "minLengthError": m3,
+    "minLengthError": m4,
     "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
     "networkError": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت. يرجى التحقق من إعدادات الشبكة.",
@@ -117,7 +121,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "otpSuccessful": MessageLookupByLibrary.simpleMessage("تم التحقق بنجاح"),
     "otpVerification": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
-    "passwordTooShort": m4,
+    "passwordTooShort": m5,
     "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
       "كلمتا المرور غير متطابقتين",
     ),

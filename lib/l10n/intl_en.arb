@@ -113,5 +113,13 @@
             }
         }
     },
-    "invalidUrl": "Please enter a valid URL"
+    "invalidUrl": "Please enter a valid URL",
+    "imageTooLarge": "Image size exceeds {maxSize}MB. Please choose a smaller image.",
+    "@imageTooLarge": {
+        "placeholders": {
+            "maxSize": {
+                "type": "double"
+            }
+        }
+    }
 }

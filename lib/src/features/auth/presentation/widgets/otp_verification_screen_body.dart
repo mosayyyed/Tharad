@@ -56,7 +56,7 @@ class OtpVerificationScreenBody extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.w),
               child: Text(
-                S.of(context).otpDescription,
+                '${S.of(context).otpDescription} ${context.read<OtpCubit>().email}',
                 style: AppTextStyles.labelLarge.copyWith(
                   color: const Color(0xFF998C8C),
                   fontSize: 12.sp,
@@ -69,7 +69,7 @@ class OtpVerificationScreenBody extends StatelessWidget {
             Directionality(
               textDirection: TextDirection.ltr,
               child: Pinput(
-                length: 5,
+                length: 4,
                 controller: context.read<OtpCubit>().otpController,
                 defaultPinTheme: defaultPinTheme,
                 focusedPinTheme: focusedPinTheme,
@@ -91,6 +91,7 @@ class OtpVerificationScreenBody extends StatelessWidget {
                 state.maybeWhen(
                   success: (message) {
                     CustomSnackBar.showSuccess(context, message);
+                    GoRouter.of(context).go(AppRoutePaths.loginScreen);
                   },
                   failure: (error) {
                     CustomSnackBar.showError(context, error);
@@ -107,10 +108,7 @@ class OtpVerificationScreenBody extends StatelessWidget {
                 return GradientButton(
                   onPressed: isLoading
                       ? null
-                      : () {
-                          context.read<OtpCubit>().verifyOtp();
-                          GoRouter.of(context).push(AppRoutePaths.layoutScreen);
-                        },
+                      : () => context.read<OtpCubit>().verifyOtp(),
                   text: S.of(context).continueButton,
                 );
               },

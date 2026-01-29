@@ -618,6 +618,131 @@ class S {
   String get select {
     return Intl.message('Select', name: 'select', desc: '', args: []);
   }
+
+  /// `This field is required`
+  String get thisFieldRequired {
+    return Intl.message(
+      'This field is required',
+      name: 'thisFieldRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{fieldName} is required`
+  String fieldRequired(String fieldName) {
+    return Intl.message(
+      '$fieldName is required',
+      name: 'fieldRequired',
+      desc: '',
+      args: [fieldName],
+    );
+  }
+
+  /// `Username must be 3-20 characters (letters, numbers, underscore)`
+  String get invalidUsername {
+    return Intl.message(
+      'Username must be 3-20 characters (letters, numbers, underscore)',
+      name: 'invalidUsername',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email address`
+  String get invalidEmail {
+    return Intl.message(
+      'Please enter a valid email address',
+      name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least {minLength} characters`
+  String passwordTooShort(int minLength) {
+    return Intl.message(
+      'Password must be at least $minLength characters',
+      name: 'passwordTooShort',
+      desc: '',
+      args: [minLength],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get passwordsDoNotMatch {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'passwordsDoNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get invalidPhoneNumber {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'invalidPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP Code`
+  String get otpCode {
+    return Intl.message('OTP Code', name: 'otpCode', desc: '', args: []);
+  }
+
+  /// `Please enter a valid {length}-digit code`
+  String invalidOtp(int length) {
+    return Intl.message(
+      'Please enter a valid $length-digit code',
+      name: 'invalidOtp',
+      desc: '',
+      args: [length],
+    );
+  }
+
+  /// `Must be at least {min} characters`
+  String minLengthError(int min) {
+    return Intl.message(
+      'Must be at least $min characters',
+      name: 'minLengthError',
+      desc: '',
+      args: [min],
+    );
+  }
+
+  /// `Must not exceed {max} characters`
+  String maxLengthError(int max) {
+    return Intl.message(
+      'Must not exceed $max characters',
+      name: 'maxLengthError',
+      desc: '',
+      args: [max],
+    );
+  }
+
+  /// `Please enter a valid URL`
+  String get invalidUrl {
+    return Intl.message(
+      'Please enter a valid URL',
+      name: 'invalidUrl',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -8,6 +8,7 @@ import 'package:tharad/src/core/routing/app_router_paths.dart';
 import 'package:tharad/src/core/services/image_picker_service.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
 import 'package:tharad/src/core/utils/custom_snackbar.dart';
+import 'package:tharad/src/core/utils/validators.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_cubit.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_state.dart';
 import 'package:tharad/src/features/auth/presentation/widgets/custom_text_form_field.dart';
@@ -116,12 +117,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                         label: S.of(context).username,
                         hint: S.of(context).usernamePlaceholder,
                         controller: cubit.usernameController,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Username is required';
-                          }
-                          return null;
-                        },
+                        validator: Validators.username,
                       ),
                       SizedBox(height: 12.h),
                       // Email Field
@@ -130,15 +126,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                         hint: S.of(context).emailPlaceholder,
                         controller: cubit.emailController,
                         keyboardType: TextInputType.emailAddress,
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Email is required';
-                          }
-                          if (!value.contains('@')) {
-                            return 'Please enter a valid email';
-                          }
-                          return null;
-                        },
+                        validator: Validators.email,
                       ),
                       SizedBox(height: 12.h),
                       // Password Field
@@ -152,15 +140,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                             isObscurePassword = !isObscurePassword;
                           });
                         },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Password is required';
-                          }
-                          if (value.length < 6) {
-                            return 'Password must be at least 6 characters';
-                          }
-                          return null;
-                        },
+                        validator: Validators.password,
                       ),
                       SizedBox(height: 12.h),
                       // Confirm Password Field
@@ -175,15 +155,10 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                                 !isObscureConfirmPassword;
                           });
                         },
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Please confirm your password';
-                          }
-                          if (value != cubit.passwordController.text) {
-                            return 'Passwords do not match';
-                          }
-                          return null;
-                        },
+                        validator: (value) => Validators.confirmPassword(
+                          value,
+                          cubit.passwordController.text,
+                        ),
                       ),
                       SizedBox(height: 40.h),
                       // Register Button

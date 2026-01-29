@@ -20,6 +20,17 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(fieldName) => "${fieldName} مطلوب";
+
+  static String m1(length) => "يرجى إدخال رمز مكون من ${length} أرقام";
+
+  static String m2(max) => "يجب ألا يتجاوز ${max} حرف";
+
+  static String m3(min) => "يجب أن يكون ${min} أحرف على الأقل";
+
+  static String m4(minLength) =>
+      "كلمة المرور يجب أن تكون ${minLength} أحرف على الأقل";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutTraining": MessageLookupByLibrary.simpleMessage("عن التدريب"),
@@ -59,6 +70,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Tharad@gmail.com",
     ),
     "english": MessageLookupByLibrary.simpleMessage("English"),
+    "fieldRequired": m0,
     "forbiddenError": MessageLookupByLibrary.simpleMessage(
       "ليس لديك صلاحية للوصول لهذا المورد.",
     ),
@@ -68,13 +80,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟ "),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال بريد إلكتروني صالح",
+    ),
+    "invalidOtp": m1,
+    "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم هاتف صالح",
+    ),
+    "invalidUrl": MessageLookupByLibrary.simpleMessage("يرجى إدخال رابط صالح"),
+    "invalidUsername": MessageLookupByLibrary.simpleMessage(
+      "اسم المستخدم يجب أن يكون 3-20 حرف (أحرف، أرقام، شرطة سفلية)",
+    ),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginFailed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
     "loginSuccessful": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح",
     ),
+    "maxLengthError": m2,
     "maxSize": MessageLookupByLibrary.simpleMessage("الحد الاقصي : 5MB"),
+    "minLengthError": m3,
     "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
     "networkError": MessageLookupByLibrary.simpleMessage(
       "لا يوجد اتصال بالإنترنت. يرجى التحقق من إعدادات الشبكة.",
@@ -84,6 +109,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "المورد المطلوب غير موجود.",
     ),
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
+    "otpCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "otpDescription": MessageLookupByLibrary.simpleMessage(
       "لاستكمال فتح حسابك ادخل رمز التحقق المرسل عبر البريد الإلكتروني",
     ),
@@ -91,6 +117,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "otpSuccessful": MessageLookupByLibrary.simpleMessage("تم التحقق بنجاح"),
     "otpVerification": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordTooShort": m4,
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمتا المرور غير متطابقتين",
+    ),
+    "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "profileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "registrationFailed": MessageLookupByLibrary.simpleMessage("فشل التسجيل"),
@@ -108,6 +139,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "حدث خطأ في الخادم. يرجى المحاولة لاحقاً.",
     ),
     "takeNewPhoto": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
+    "thisFieldRequired": MessageLookupByLibrary.simpleMessage(
+      "هذا الحقل مطلوب",
+    ),
     "timeoutError": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة الاتصال. يرجى المحاولة مرة أخرى.",
     ),

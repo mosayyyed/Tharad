@@ -65,5 +65,54 @@
     "gallery": "المعرض",
     "takeNewPhoto": "التقط صورة جديدة",
     "chooseFromGallery": "اختر من الصور الموجودة",
-    "select": "اختيار"
+    "select": "اختيار",
+
+    "thisFieldRequired": "هذا الحقل مطلوب",
+    "fieldRequired": "{fieldName} مطلوب",
+    "@fieldRequired": {
+        "placeholders": {
+            "fieldName": {
+                "type": "String"
+            }
+        }
+    },
+    "invalidUsername": "اسم المستخدم يجب أن يكون 3-20 حرف (أحرف، أرقام، شرطة سفلية)",
+    "invalidEmail": "يرجى إدخال بريد إلكتروني صالح",
+    "passwordTooShort": "كلمة المرور يجب أن تكون {minLength} أحرف على الأقل",
+    "@passwordTooShort": {
+        "placeholders": {
+            "minLength": {
+                "type": "int"
+            }
+        }
+    },
+    "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
+    "phoneNumber": "رقم الهاتف",
+    "invalidPhoneNumber": "يرجى إدخال رقم هاتف صالح",
+    "otpCode": "رمز التحقق",
+    "invalidOtp": "يرجى إدخال رمز مكون من {length} أرقام",
+    "@invalidOtp": {
+        "placeholders": {
+            "length": {
+                "type": "int"
+            }
+        }
+    },
+    "minLengthError": "يجب أن يكون {min} أحرف على الأقل",
+    "@minLengthError": {
+        "placeholders": {
+            "min": {
+                "type": "int"
+            }
+        }
+    },
+    "maxLengthError": "يجب ألا يتجاوز {max} حرف",
+    "@maxLengthError": {
+        "placeholders": {
+            "max": {
+                "type": "int"
+            }
+        }
+    },
+    "invalidUrl": "يرجى إدخال رابط صالح"
 }

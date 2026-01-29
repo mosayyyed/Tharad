@@ -20,6 +20,17 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
+  static String m0(fieldName) => "${fieldName} is required";
+
+  static String m1(length) => "Please enter a valid ${length}-digit code";
+
+  static String m2(max) => "Must not exceed ${max} characters";
+
+  static String m3(min) => "Must be at least ${min} characters";
+
+  static String m4(minLength) =>
+      "Password must be at least ${minLength} characters";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutTraining": MessageLookupByLibrary.simpleMessage("About Training"),
@@ -65,6 +76,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Tharad@gmail.com",
     ),
     "english": MessageLookupByLibrary.simpleMessage("English"),
+    "fieldRequired": m0,
     "forbiddenError": MessageLookupByLibrary.simpleMessage(
       "You don\'t have permission to access this resource.",
     ),
@@ -72,11 +84,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account? "),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid email address",
+    ),
+    "invalidOtp": m1,
+    "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid phone number",
+    ),
+    "invalidUrl": MessageLookupByLibrary.simpleMessage(
+      "Please enter a valid URL",
+    ),
+    "invalidUsername": MessageLookupByLibrary.simpleMessage(
+      "Username must be 3-20 characters (letters, numbers, underscore)",
+    ),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "loginSuccessful": MessageLookupByLibrary.simpleMessage("Login Successful"),
+    "maxLengthError": m2,
     "maxSize": MessageLookupByLibrary.simpleMessage("Max size: 5MB"),
+    "minLengthError": m3,
     "myAccount": MessageLookupByLibrary.simpleMessage("My Account"),
     "networkError": MessageLookupByLibrary.simpleMessage(
       "No internet connection. Please check your network settings.",
@@ -86,6 +113,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Requested resource not found.",
     ),
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
+    "otpCode": MessageLookupByLibrary.simpleMessage("OTP Code"),
     "otpDescription": MessageLookupByLibrary.simpleMessage(
       "To complete opening your account, enter the verification code sent via email",
     ),
@@ -97,6 +125,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Verification Code",
     ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
+    "passwordTooShort": m4,
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "Passwords do not match",
+    ),
+    "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "profileImage": MessageLookupByLibrary.simpleMessage("Profile Image"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
     "registrationFailed": MessageLookupByLibrary.simpleMessage(
@@ -116,6 +149,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Server error occurred. Please try again later.",
     ),
     "takeNewPhoto": MessageLookupByLibrary.simpleMessage("Take a new photo"),
+    "thisFieldRequired": MessageLookupByLibrary.simpleMessage(
+      "This field is required",
+    ),
     "timeoutError": MessageLookupByLibrary.simpleMessage(
       "Connection timeout. Please try again.",
     ),

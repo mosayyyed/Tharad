@@ -65,5 +65,54 @@
     "gallery": "Gallery",
     "takeNewPhoto": "Take a new photo",
     "chooseFromGallery": "Choose from existing photos",
-    "select": "Select"
+    "select": "Select",
+
+    "thisFieldRequired": "This field is required",
+    "fieldRequired": "{fieldName} is required",
+    "@fieldRequired": {
+        "placeholders": {
+            "fieldName": {
+                "type": "String"
+            }
+        }
+    },
+    "invalidUsername": "Username must be 3-20 characters (letters, numbers, underscore)",
+    "invalidEmail": "Please enter a valid email address",
+    "passwordTooShort": "Password must be at least {minLength} characters",
+    "@passwordTooShort": {
+        "placeholders": {
+            "minLength": {
+                "type": "int"
+            }
+        }
+    },
+    "passwordsDoNotMatch": "Passwords do not match",
+    "phoneNumber": "Phone Number",
+    "invalidPhoneNumber": "Please enter a valid phone number",
+    "otpCode": "OTP Code",
+    "invalidOtp": "Please enter a valid {length}-digit code",
+    "@invalidOtp": {
+        "placeholders": {
+            "length": {
+                "type": "int"
+            }
+        }
+    },
+    "minLengthError": "Must be at least {min} characters",
+    "@minLengthError": {
+        "placeholders": {
+            "min": {
+                "type": "int"
+            }
+        }
+    },
+    "maxLengthError": "Must not exceed {max} characters",
+    "@maxLengthError": {
+        "placeholders": {
+            "max": {
+                "type": "int"
+            }
+        }
+    },
+    "invalidUrl": "Please enter a valid URL"
 }

@@ -1,10 +1,16 @@
+import 'dart:developer';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tharad/generated/l10n.dart';
+import 'package:tharad/src/features/auth/data/models/register_request_model.dart';
+import 'package:tharad/src/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit() : super(const RegisterState.initial());
+  final AuthRepository _authRepository;
+
+  RegisterCubit(this._authRepository) : super(const RegisterState.initial());
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
@@ -16,6 +22,7 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   bool isObscurePassword = true;
   bool isObscureConfirmPassword = true;
+  String? _profileImagePath;
 
   void togglePasswordVisibility() {
     isObscurePassword = !isObscurePassword;
@@ -27,22 +34,41 @@ class RegisterCubit extends Cubit<RegisterState> {
     emit(state);
   }
 
-  Future<void> handleImageUpload() async {
-    // TODO: Implement image upload logic
+  void setProfileImage(String? path) {
+    _profileImagePath = path;
   }
 
   Future<void> register() async {
-    if (formKey.currentState?.validate() ?? false) {
-      emit(const RegisterState.loading());
+    if (!(formKey.currentState?.validate() ?? false)) return;
 
-      try {
-        // TODO: Implement register logic
+    emit(const RegisterState.loading());
 
-        emit(RegisterState.success(S.current.registrationSuccessful));
-      } catch (e) {
-        emit(RegisterState.failure(e.toString()));
+    final request = RegisterRequestModel(
+      email: emailController.text.trim(),
+      username: usernameController.text.trim(),
+      password: passwordController.text,
+      passwordConfirmation: confirmPasswordController.text,
+      profileImage: _profileImagePath,
+    );
+
+    final result = await _authRepository.register(request);
+
+    result.fold((failure) => emit(RegisterState.failure(failure.message)), (
+      response,
+    ) {
+      if (response.isSuccess) {
+        // Log OTP in debug mode for testing
+        if (kDebugMode && response.data?.otp != null) {
+          log('🔐 OTP Code: ${response.data!.otp}', name: 'RegisterCubit');
+        }
+
+        emit(
+          RegisterState.success(response.message, email: response.data?.email),
+        );
+      } else {
+        emit(RegisterState.failure(response.message));
       }
-    }
+    });
   }
 
   @override

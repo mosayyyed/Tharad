@@ -6,6 +6,7 @@ part 'register_state.freezed.dart';
 class RegisterState with _$RegisterState {
   const factory RegisterState.initial() = _Initial;
   const factory RegisterState.loading() = _Loading;
-  const factory RegisterState.success(String message) = _Success;
+  const factory RegisterState.success(String message, {String? email}) =
+      _Success;
   const factory RegisterState.failure(String error) = _Failure;
 }

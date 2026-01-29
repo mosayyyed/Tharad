@@ -31,6 +31,9 @@ class CustomSnackBar {
 
   static void showError(BuildContext context, String message) =>
       _show(context, message, AppColors.error);
+
+  static void showInfo(BuildContext context, String message) =>
+      _show(context, message, AppColors.primary);
 }
 
 class _AnimatedSnackBar extends StatefulWidget {

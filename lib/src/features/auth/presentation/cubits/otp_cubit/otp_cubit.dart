@@ -1,11 +1,16 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:tharad/generated/l10n.dart';
+import 'package:tharad/src/features/auth/data/models/verify_otp_request_model.dart';
+import 'package:tharad/src/features/auth/data/repositories/auth_repository.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/otp_cubit/otp_state.dart';
 
 class OtpCubit extends Cubit<OtpState> {
-  OtpCubit() : super(const OtpState.initial()) {
+  final AuthRepository _authRepository;
+  final String email;
+
+  OtpCubit(this._authRepository, {required this.email})
+    : super(const OtpState.initial()) {
     startTimer();
   }
 
@@ -31,30 +36,33 @@ class OtpCubit extends Cubit<OtpState> {
   Future<void> resendOtp() async {
     if (_remainingSeconds > 0) return;
 
-    emit(const OtpState.loading());
-    try {
-      await Future.delayed(const Duration(seconds: 1));
-      startTimer();
-      emit(state);
-    } catch (e) {
-      emit(OtpState.failure(e.toString()));
-    }
+    // Note: If API has resend endpoint, implement it here
+    startTimer();
+    emit(state);
   }
 
   Future<void> verifyOtp() async {
     final code = otpController.text;
-    if (code.length != 5) {
-      emit(OtpState.failure(S.current.otpFailed));
+    if (code.length != 4) {
+      emit(const OtpState.failure('Please enter a valid 4-digit OTP'));
       return;
     }
 
     emit(const OtpState.loading());
-    try {
-      await Future.delayed(const Duration(seconds: 2));
-      emit(OtpState.success(S.current.otpSuccessful));
-    } catch (e) {
-      emit(OtpState.failure(e.toString()));
-    }
+
+    final request = VerifyOtpRequestModel(email: email, otp: int.parse(code));
+
+    final result = await _authRepository.verifyOtp(request);
+
+    result.fold((failure) => emit(OtpState.failure(failure.message)), (
+      response,
+    ) {
+      if (response.isSuccess) {
+        emit(OtpState.success(response.message));
+      } else {
+        emit(OtpState.failure(response.message));
+      }
+    });
   }
 
   @override

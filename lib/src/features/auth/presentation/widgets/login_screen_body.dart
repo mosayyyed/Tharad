@@ -7,6 +7,7 @@ import 'package:tharad/src/core/routing/app_router_paths.dart';
 import 'package:tharad/src/core/theming/app_colors.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
 import 'package:tharad/src/core/utils/custom_snackbar.dart';
+import 'package:tharad/src/core/utils/validators.dart';
 import 'package:tharad/src/core/widgets/language_button.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/login_cubit/login_state.dart';
@@ -34,6 +35,16 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
         child: BlocConsumer<LoginCubit, LoginState>(
           listener: (context, state) {
             state.maybeWhen(
+              success: (message, token) {
+                CustomSnackBar.showSuccess(context, message);
+                GoRouter.of(context).go(AppRoutePaths.layoutScreen);
+              },
+              otpRequired: (message, email) {
+                CustomSnackBar.showInfo(context, message);
+                GoRouter.of(
+                  context,
+                ).push('${AppRoutePaths.otpVerificationScreen}?email=$email');
+              },
               failure: (error) {
                 CustomSnackBar.showError(context, error);
               },
@@ -79,6 +90,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                         hint: S.of(context).emailPlaceholder,
                         controller: cubit.emailController,
                         keyboardType: TextInputType.emailAddress,
+                        validator: Validators.email,
                       ),
                       SizedBox(height: 12.h),
                       // Password Field
@@ -92,6 +104,7 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                             isObscurePassword = !isObscurePassword;
                           });
                         },
+                        validator: Validators.password,
                       ),
                       SizedBox(height: 8.h),
                       // Remember Me & Forgot Password Row
@@ -133,14 +146,8 @@ class _LoginScreenBodyState extends State<LoginScreenBody> {
                       // Login Button
                       GradientButton(
                         text: S.of(context).login,
-                        onPressed: () {
-                          if (!isLoading) {
-                            cubit.login();
-                            GoRouter.of(
-                              context,
-                            ).push(AppRoutePaths.otpVerificationScreen);
-                          }
-                        },
+                        isLoading: isLoading,
+                        onPressed: isLoading ? null : () => cubit.login(),
                       ),
                       SizedBox(height: 12.h),
                       // Register Link

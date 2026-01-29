@@ -55,13 +55,14 @@ extension LoginStatePatterns on LoginState {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _Loading value)?  loading,TResult Function( _Success value)?  success,TResult Function( _Failure value)?  failure,required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>({TResult Function( _Initial value)?  initial,TResult Function( _Loading value)?  loading,TResult Function( _Success value)?  success,TResult Function( _OtpRequired value)?  otpRequired,TResult Function( _Failure value)?  failure,required TResult orElse(),}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial(_that);case _Loading() when loading != null:
 return loading(_that);case _Success() when success != null:
-return success(_that);case _Failure() when failure != null:
+return success(_that);case _OtpRequired() when otpRequired != null:
+return otpRequired(_that);case _Failure() when failure != null:
 return failure(_that);case _:
   return orElse();
 
@@ -80,13 +81,14 @@ return failure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _Loading value)  loading,required TResult Function( _Success value)  success,required TResult Function( _Failure value)  failure,}){
+@optionalTypeArgs TResult map<TResult extends Object?>({required TResult Function( _Initial value)  initial,required TResult Function( _Loading value)  loading,required TResult Function( _Success value)  success,required TResult Function( _OtpRequired value)  otpRequired,required TResult Function( _Failure value)  failure,}){
 final _that = this;
 switch (_that) {
 case _Initial():
 return initial(_that);case _Loading():
 return loading(_that);case _Success():
-return success(_that);case _Failure():
+return success(_that);case _OtpRequired():
+return otpRequired(_that);case _Failure():
 return failure(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -104,13 +106,14 @@ return failure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _Loading value)?  loading,TResult? Function( _Success value)?  success,TResult? Function( _Failure value)?  failure,}){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>({TResult? Function( _Initial value)?  initial,TResult? Function( _Loading value)?  loading,TResult? Function( _Success value)?  success,TResult? Function( _OtpRequired value)?  otpRequired,TResult? Function( _Failure value)?  failure,}){
 final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial(_that);case _Loading() when loading != null:
 return loading(_that);case _Success() when success != null:
-return success(_that);case _Failure() when failure != null:
+return success(_that);case _OtpRequired() when otpRequired != null:
+return otpRequired(_that);case _Failure() when failure != null:
 return failure(_that);case _:
   return null;
 
@@ -128,12 +131,13 @@ return failure(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( String message)?  success,TResult Function( String error)?  failure,required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>({TResult Function()?  initial,TResult Function()?  loading,TResult Function( String message,  String? token)?  success,TResult Function( String message,  String email)?  otpRequired,TResult Function( String error)?  failure,required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _Loading() when loading != null:
 return loading();case _Success() when success != null:
-return success(_that.message);case _Failure() when failure != null:
+return success(_that.message,_that.token);case _OtpRequired() when otpRequired != null:
+return otpRequired(_that.message,_that.email);case _Failure() when failure != null:
 return failure(_that.error);case _:
   return orElse();
 
@@ -152,12 +156,13 @@ return failure(_that.error);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( String message)  success,required TResult Function( String error)  failure,}) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>({required TResult Function()  initial,required TResult Function()  loading,required TResult Function( String message,  String? token)  success,required TResult Function( String message,  String email)  otpRequired,required TResult Function( String error)  failure,}) {final _that = this;
 switch (_that) {
 case _Initial():
 return initial();case _Loading():
 return loading();case _Success():
-return success(_that.message);case _Failure():
+return success(_that.message,_that.token);case _OtpRequired():
+return otpRequired(_that.message,_that.email);case _Failure():
 return failure(_that.error);case _:
   throw StateError('Unexpected subclass');
 
@@ -175,12 +180,13 @@ return failure(_that.error);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( String message)?  success,TResult? Function( String error)?  failure,}) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>({TResult? Function()?  initial,TResult? Function()?  loading,TResult? Function( String message,  String? token)?  success,TResult? Function( String message,  String email)?  otpRequired,TResult? Function( String error)?  failure,}) {final _that = this;
 switch (_that) {
 case _Initial() when initial != null:
 return initial();case _Loading() when loading != null:
 return loading();case _Success() when success != null:
-return success(_that.message);case _Failure() when failure != null:
+return success(_that.message,_that.token);case _OtpRequired() when otpRequired != null:
+return otpRequired(_that.message,_that.email);case _Failure() when failure != null:
 return failure(_that.error);case _:
   return null;
 
@@ -257,10 +263,11 @@ String toString() {
 
 
 class _Success implements LoginState {
-  const _Success(this.message);
+  const _Success(this.message, {this.token});
   
 
  final  String message;
+ final  String? token;
 
 /// Create a copy of LoginState
 /// with the given fields replaced by the non-null parameter values.
@@ -272,16 +279,16 @@ _$SuccessCopyWith<_Success> get copyWith => __$SuccessCopyWithImpl<_Success>(thi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Success&&(identical(other.message, message) || other.message == message));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Success&&(identical(other.message, message) || other.message == message)&&(identical(other.token, token) || other.token == token));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,message);
+int get hashCode => Object.hash(runtimeType,message,token);
 
 @override
 String toString() {
-  return 'LoginState.success(message: $message)';
+  return 'LoginState.success(message: $message, token: $token)';
 }
 
 
@@ -292,7 +299,7 @@ abstract mixin class _$SuccessCopyWith<$Res> implements $LoginStateCopyWith<$Res
   factory _$SuccessCopyWith(_Success value, $Res Function(_Success) _then) = __$SuccessCopyWithImpl;
 @useResult
 $Res call({
- String message
+ String message, String? token
 });
 
 
@@ -309,9 +316,78 @@ class __$SuccessCopyWithImpl<$Res>
 
 /// Create a copy of LoginState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') $Res call({Object? message = null,}) {
+@pragma('vm:prefer-inline') $Res call({Object? message = null,Object? token = freezed,}) {
   return _then(_Success(
 null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+/// @nodoc
+
+
+class _OtpRequired implements LoginState {
+  const _OtpRequired(this.message, {required this.email});
+  
+
+ final  String message;
+ final  String email;
+
+/// Create a copy of LoginState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$OtpRequiredCopyWith<_OtpRequired> get copyWith => __$OtpRequiredCopyWithImpl<_OtpRequired>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OtpRequired&&(identical(other.message, message) || other.message == message)&&(identical(other.email, email) || other.email == email));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,message,email);
+
+@override
+String toString() {
+  return 'LoginState.otpRequired(message: $message, email: $email)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$OtpRequiredCopyWith<$Res> implements $LoginStateCopyWith<$Res> {
+  factory _$OtpRequiredCopyWith(_OtpRequired value, $Res Function(_OtpRequired) _then) = __$OtpRequiredCopyWithImpl;
+@useResult
+$Res call({
+ String message, String email
+});
+
+
+
+
+}
+/// @nodoc
+class __$OtpRequiredCopyWithImpl<$Res>
+    implements _$OtpRequiredCopyWith<$Res> {
+  __$OtpRequiredCopyWithImpl(this._self, this._then);
+
+  final _OtpRequired _self;
+  final $Res Function(_OtpRequired) _then;
+
+/// Create a copy of LoginState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') $Res call({Object? message = null,Object? email = null,}) {
+  return _then(_OtpRequired(
+null == message ? _self.message : message // ignore: cast_nullable_to_non_nullable
+as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

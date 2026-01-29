@@ -26,7 +26,8 @@ abstract class AppRouter {
       GoRoute(
         path: AppRoutePaths.otpVerificationScreen,
         builder: (context, state) {
-          return const OtpVerificationScreen();
+          final email = state.uri.queryParameters['email'] ?? '';
+          return OtpVerificationScreen(email: email);
         },
       ),
       GoRoute(

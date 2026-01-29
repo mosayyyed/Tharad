@@ -3,9 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:tharad/generated/l10n.dart';
+import 'package:tharad/src/core/di/injection_container.dart';
 import 'package:tharad/src/core/routing/app_router_paths.dart';
+import 'package:tharad/src/core/services/image_picker_service.dart';
 import 'package:tharad/src/core/theming/app_text_styles.dart';
 import 'package:tharad/src/core/utils/custom_snackbar.dart';
+import 'package:tharad/src/core/utils/validators.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_cubit.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_state.dart';
 import 'package:tharad/src/features/auth/presentation/widgets/custom_text_form_field.dart';
@@ -23,6 +26,30 @@ class RegisterScreenBody extends StatefulWidget {
 class _RegisterScreenBodyState extends State<RegisterScreenBody> {
   bool isObscurePassword = true;
   bool isObscureConfirmPassword = true;
+  String? _selectedImagePath;
+
+  final ImagePickerService _imagePickerService = sl<ImagePickerService>();
+
+  void _pickImage() {
+    _imagePickerService.showImageSourceBottomSheetWithCallback(
+      context,
+      onImageSelected: (image) {
+        if (image != null) {
+          setState(() {
+            _selectedImagePath = image.path;
+          });
+          context.read<RegisterCubit>().setProfileImage(image.path);
+        }
+      },
+    );
+  }
+
+  void _removeImage() {
+    setState(() {
+      _selectedImagePath = null;
+    });
+    context.read<RegisterCubit>().setProfileImage(null);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +60,14 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
         child: BlocConsumer<RegisterCubit, RegisterState>(
           listener: (context, state) {
             state.maybeWhen(
+              success: (message, email) {
+                CustomSnackBar.showSuccess(context, message);
+                if (email != null) {
+                  GoRouter.of(
+                    context,
+                  ).push('${AppRoutePaths.otpVerificationScreen}?email=$email');
+                }
+              },
               failure: (error) {
                 CustomSnackBar.showError(context, error);
               },
@@ -72,7 +107,9 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                       SizedBox(height: 24.h),
                       // Profile Image Upload
                       ProfileImageUploadField(
-                        onTap: () => cubit.handleImageUpload(),
+                        imagePath: _selectedImagePath,
+                        onTap: _pickImage,
+                        onRemove: _removeImage,
                       ),
                       SizedBox(height: 12.h),
                       // Username Field
@@ -80,6 +117,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                         label: S.of(context).username,
                         hint: S.of(context).usernamePlaceholder,
                         controller: cubit.usernameController,
+                        validator: Validators.username,
                       ),
                       SizedBox(height: 12.h),
                       // Email Field
@@ -88,6 +126,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                         hint: S.of(context).emailPlaceholder,
                         controller: cubit.emailController,
                         keyboardType: TextInputType.emailAddress,
+                        validator: Validators.email,
                       ),
                       SizedBox(height: 12.h),
                       // Password Field
@@ -101,6 +140,7 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                             isObscurePassword = !isObscurePassword;
                           });
                         },
+                        validator: Validators.password,
                       ),
                       SizedBox(height: 12.h),
                       // Confirm Password Field
@@ -115,19 +155,17 @@ class _RegisterScreenBodyState extends State<RegisterScreenBody> {
                                 !isObscureConfirmPassword;
                           });
                         },
+                        validator: (value) => Validators.confirmPassword(
+                          value,
+                          cubit.passwordController.text,
+                        ),
                       ),
                       SizedBox(height: 40.h),
                       // Register Button
                       GradientButton(
                         text: S.of(context).createNewAccount,
-                        onPressed: isLoading
-                            ? null
-                            : () {
-                                cubit.register();
-                                GoRouter.of(
-                                  context,
-                                ).push(AppRoutePaths.otpVerificationScreen);
-                              },
+                        isLoading: isLoading,
+                        onPressed: isLoading ? null : () => cubit.register(),
                       ),
                       SizedBox(height: 12.h),
                       // Login Link

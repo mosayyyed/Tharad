@@ -20,6 +20,17 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'ar';
 
+  static String m0(fieldName) => "${fieldName} مطلوب";
+
+  static String m1(length) => "يرجى إدخال رمز مكون من ${length} أرقام";
+
+  static String m2(max) => "يجب ألا يتجاوز ${max} حرف";
+
+  static String m3(min) => "يجب أن يكون ${min} أحرف على الأقل";
+
+  static String m4(minLength) =>
+      "كلمة المرور يجب أن تكون ${minLength} أحرف على الأقل";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "aboutTraining": MessageLookupByLibrary.simpleMessage("عن التدريب"),
@@ -32,6 +43,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTitle": MessageLookupByLibrary.simpleMessage("ثرد"),
     "apply": MessageLookupByLibrary.simpleMessage("تطبيق"),
     "arabic": MessageLookupByLibrary.simpleMessage("اللغة العربية"),
+    "badRequestError": MessageLookupByLibrary.simpleMessage(
+      "طلب غير صالح. يرجى التحقق من البيانات المدخلة.",
+    ),
+    "cacheError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ في التخزين المحلي.",
+    ),
+    "camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
+    "cancelledError": MessageLookupByLibrary.simpleMessage("تم إلغاء الطلب."),
+    "chooseFromGallery": MessageLookupByLibrary.simpleMessage(
+      "اختر من الصور الموجودة",
+    ),
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور الجديدة",
     ),
@@ -48,21 +70,46 @@ class MessageLookup extends MessageLookupByLibrary {
       "Tharad@gmail.com",
     ),
     "english": MessageLookupByLibrary.simpleMessage("English"),
+    "fieldRequired": m0,
+    "forbiddenError": MessageLookupByLibrary.simpleMessage(
+      "ليس لديك صلاحية للوصول لهذا المورد.",
+    ),
     "forgotPassword": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
+    "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟ "),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+    "invalidEmail": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال بريد إلكتروني صالح",
+    ),
+    "invalidOtp": m1,
+    "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
+      "يرجى إدخال رقم هاتف صالح",
+    ),
+    "invalidUrl": MessageLookupByLibrary.simpleMessage("يرجى إدخال رابط صالح"),
+    "invalidUsername": MessageLookupByLibrary.simpleMessage(
+      "اسم المستخدم يجب أن يكون 3-20 حرف (أحرف، أرقام، شرطة سفلية)",
+    ),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
     "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "loginFailed": MessageLookupByLibrary.simpleMessage("فشل تسجيل الدخول"),
     "loginSuccessful": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح",
     ),
+    "maxLengthError": m2,
     "maxSize": MessageLookupByLibrary.simpleMessage("الحد الاقصي : 5MB"),
+    "minLengthError": m3,
     "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "networkError": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد اتصال بالإنترنت. يرجى التحقق من إعدادات الشبكة.",
+    ),
     "newPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+    "notFoundError": MessageLookupByLibrary.simpleMessage(
+      "المورد المطلوب غير موجود.",
+    ),
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
+    "otpCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "otpDescription": MessageLookupByLibrary.simpleMessage(
       "لاستكمال فتح حسابك ادخل رمز التحقق المرسل عبر البريد الإلكتروني",
     ),
@@ -70,6 +117,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "otpSuccessful": MessageLookupByLibrary.simpleMessage("تم التحقق بنجاح"),
     "otpVerification": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+    "passwordTooShort": m4,
+    "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
+      "كلمتا المرور غير متطابقتين",
+    ),
+    "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "profileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
     "registrationFailed": MessageLookupByLibrary.simpleMessage("فشل التسجيل"),
@@ -79,11 +131,34 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "resendCode": MessageLookupByLibrary.simpleMessage("إعادة ارسال"),
     "saveChanges": MessageLookupByLibrary.simpleMessage("حفظ التغيرات"),
+    "select": MessageLookupByLibrary.simpleMessage("اختيار"),
+    "selectImageSource": MessageLookupByLibrary.simpleMessage(
+      "اختر مصدر الصورة",
+    ),
+    "serverError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ في الخادم. يرجى المحاولة لاحقاً.",
+    ),
+    "takeNewPhoto": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
+    "thisFieldRequired": MessageLookupByLibrary.simpleMessage(
+      "هذا الحقل مطلوب",
+    ),
+    "timeoutError": MessageLookupByLibrary.simpleMessage(
+      "انتهت مهلة الاتصال. يرجى المحاولة مرة أخرى.",
+    ),
     "trainingTitle": MessageLookupByLibrary.simpleMessage(
       "تدريب Flutter لبناء تطبيقات موبايل حقيقية",
     ),
+    "unauthorizedError": MessageLookupByLibrary.simpleMessage(
+      "انتهت صلاحية الجلسة. يرجى تسجيل الدخول مرة أخرى.",
+    ),
+    "unknownError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ غير متوقع. يرجى المحاولة لاحقاً.",
+    ),
     "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "usernamePlaceholder": MessageLookupByLibrary.simpleMessage("thar22"),
+    "validationError": MessageLookupByLibrary.simpleMessage(
+      "فشل التحقق من البيانات. يرجى مراجعة الحقول.",
+    ),
     "welcomeMessage": MessageLookupByLibrary.simpleMessage("مرحبا ثراد تك !"),
     "workNature": MessageLookupByLibrary.simpleMessage(
       "طبيعة الشغل أثناء التدريب",

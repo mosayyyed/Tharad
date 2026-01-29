@@ -463,6 +463,286 @@ class S {
       args: [],
     );
   }
+
+  /// `No internet connection. Please check your network settings.`
+  String get networkError {
+    return Intl.message(
+      'No internet connection. Please check your network settings.',
+      name: 'networkError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connection timeout. Please try again.`
+  String get timeoutError {
+    return Intl.message(
+      'Connection timeout. Please try again.',
+      name: 'timeoutError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request cancelled.`
+  String get cancelledError {
+    return Intl.message(
+      'Request cancelled.',
+      name: 'cancelledError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Server error occurred. Please try again later.`
+  String get serverError {
+    return Intl.message(
+      'Server error occurred. Please try again later.',
+      name: 'serverError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Requested resource not found.`
+  String get notFoundError {
+    return Intl.message(
+      'Requested resource not found.',
+      name: 'notFoundError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Session expired. Please login again.`
+  String get unauthorizedError {
+    return Intl.message(
+      'Session expired. Please login again.',
+      name: 'unauthorizedError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't have permission to access this resource.`
+  String get forbiddenError {
+    return Intl.message(
+      'You don\'t have permission to access this resource.',
+      name: 'forbiddenError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid request. Please check your input data.`
+  String get badRequestError {
+    return Intl.message(
+      'Invalid request. Please check your input data.',
+      name: 'badRequestError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Validation failed. Please review the fields.`
+  String get validationError {
+    return Intl.message(
+      'Validation failed. Please review the fields.',
+      name: 'validationError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Local storage error occurred.`
+  String get cacheError {
+    return Intl.message(
+      'Local storage error occurred.',
+      name: 'cacheError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An unexpected error occurred. Please try again later.`
+  String get unknownError {
+    return Intl.message(
+      'An unexpected error occurred. Please try again later.',
+      name: 'unknownError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Image Source`
+  String get selectImageSource {
+    return Intl.message(
+      'Select Image Source',
+      name: 'selectImageSource',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message('Camera', name: 'camera', desc: '', args: []);
+  }
+
+  /// `Gallery`
+  String get gallery {
+    return Intl.message('Gallery', name: 'gallery', desc: '', args: []);
+  }
+
+  /// `Take a new photo`
+  String get takeNewPhoto {
+    return Intl.message(
+      'Take a new photo',
+      name: 'takeNewPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose from existing photos`
+  String get chooseFromGallery {
+    return Intl.message(
+      'Choose from existing photos',
+      name: 'chooseFromGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select`
+  String get select {
+    return Intl.message('Select', name: 'select', desc: '', args: []);
+  }
+
+  /// `This field is required`
+  String get thisFieldRequired {
+    return Intl.message(
+      'This field is required',
+      name: 'thisFieldRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{fieldName} is required`
+  String fieldRequired(String fieldName) {
+    return Intl.message(
+      '$fieldName is required',
+      name: 'fieldRequired',
+      desc: '',
+      args: [fieldName],
+    );
+  }
+
+  /// `Username must be 3-20 characters (letters, numbers, underscore)`
+  String get invalidUsername {
+    return Intl.message(
+      'Username must be 3-20 characters (letters, numbers, underscore)',
+      name: 'invalidUsername',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email address`
+  String get invalidEmail {
+    return Intl.message(
+      'Please enter a valid email address',
+      name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least {minLength} characters`
+  String passwordTooShort(int minLength) {
+    return Intl.message(
+      'Password must be at least $minLength characters',
+      name: 'passwordTooShort',
+      desc: '',
+      args: [minLength],
+    );
+  }
+
+  /// `Passwords do not match`
+  String get passwordsDoNotMatch {
+    return Intl.message(
+      'Passwords do not match',
+      name: 'passwordsDoNotMatch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get invalidPhoneNumber {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'invalidPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP Code`
+  String get otpCode {
+    return Intl.message('OTP Code', name: 'otpCode', desc: '', args: []);
+  }
+
+  /// `Please enter a valid {length}-digit code`
+  String invalidOtp(int length) {
+    return Intl.message(
+      'Please enter a valid $length-digit code',
+      name: 'invalidOtp',
+      desc: '',
+      args: [length],
+    );
+  }
+
+  /// `Must be at least {min} characters`
+  String minLengthError(int min) {
+    return Intl.message(
+      'Must be at least $min characters',
+      name: 'minLengthError',
+      desc: '',
+      args: [min],
+    );
+  }
+
+  /// `Must not exceed {max} characters`
+  String maxLengthError(int max) {
+    return Intl.message(
+      'Must not exceed $max characters',
+      name: 'maxLengthError',
+      desc: '',
+      args: [max],
+    );
+  }
+
+  /// `Please enter a valid URL`
+  String get invalidUrl {
+    return Intl.message(
+      'Please enter a valid URL',
+      name: 'invalidUrl',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

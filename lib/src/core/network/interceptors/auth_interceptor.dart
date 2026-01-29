@@ -1,34 +1,34 @@
 import 'package:dio/dio.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../constants/api_constants.dart';
+import '../../services/secure_storage_service.dart';
 
-class AuthInterceptor extends Interceptor {
-  final SharedPreferences _prefs;
+class AuthInterceptor extends QueuedInterceptor {
+  final SecureStorageService _secureStorage;
 
-  AuthInterceptor(this._prefs);
+  AuthInterceptor(this._secureStorage);
 
   @override
   void onRequest(
     RequestOptions options,
     RequestInterceptorHandler handler,
   ) async {
-    final token = _prefs.getString(ApiConstants.tokenKey);
+    final token = await _secureStorage.getToken();
 
     if (token != null && token.isNotEmpty) {
       options.headers[ApiConstants.authorizationHeader] = 'Bearer $token';
     }
 
-    super.onRequest(options, handler);
+    handler.next(options);
   }
 
   @override
-  void onError(DioException err, ErrorInterceptorHandler handler) {
+  void onError(DioException err, ErrorInterceptorHandler handler) async {
     if (err.response?.statusCode == 401) {
-      _prefs.remove(ApiConstants.tokenKey);
-      _prefs.remove(ApiConstants.userKey);
+      await _secureStorage.removeToken();
+      await _secureStorage.removeUserData();
     }
 
-    super.onError(err, handler);
+    handler.next(err);
   }
 }

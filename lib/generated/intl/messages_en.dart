@@ -32,6 +32,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTitle": MessageLookupByLibrary.simpleMessage("Tharad"),
     "apply": MessageLookupByLibrary.simpleMessage("Apply"),
     "arabic": MessageLookupByLibrary.simpleMessage("Arabic"),
+    "badRequestError": MessageLookupByLibrary.simpleMessage(
+      "Invalid request. Please check your input data.",
+    ),
+    "cacheError": MessageLookupByLibrary.simpleMessage(
+      "Local storage error occurred.",
+    ),
+    "camera": MessageLookupByLibrary.simpleMessage("Camera"),
+    "cancelledError": MessageLookupByLibrary.simpleMessage(
+      "Request cancelled.",
+    ),
+    "chooseFromGallery": MessageLookupByLibrary.simpleMessage(
+      "Choose from existing photos",
+    ),
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "Confirm New Password",
     ),
@@ -52,7 +65,11 @@ class MessageLookup extends MessageLookupByLibrary {
       "Tharad@gmail.com",
     ),
     "english": MessageLookupByLibrary.simpleMessage("English"),
+    "forbiddenError": MessageLookupByLibrary.simpleMessage(
+      "You don\'t have permission to access this resource.",
+    ),
     "forgotPassword": MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+    "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account? "),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
     "language": MessageLookupByLibrary.simpleMessage("Language"),
@@ -61,7 +78,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginSuccessful": MessageLookupByLibrary.simpleMessage("Login Successful"),
     "maxSize": MessageLookupByLibrary.simpleMessage("Max size: 5MB"),
     "myAccount": MessageLookupByLibrary.simpleMessage("My Account"),
+    "networkError": MessageLookupByLibrary.simpleMessage(
+      "No internet connection. Please check your network settings.",
+    ),
     "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+    "notFoundError": MessageLookupByLibrary.simpleMessage(
+      "Requested resource not found.",
+    ),
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
     "otpDescription": MessageLookupByLibrary.simpleMessage(
       "To complete opening your account, enter the verification code sent via email",
@@ -85,11 +108,31 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberMe": MessageLookupByLibrary.simpleMessage("Remember me"),
     "resendCode": MessageLookupByLibrary.simpleMessage("Resend"),
     "saveChanges": MessageLookupByLibrary.simpleMessage("Save Changes"),
+    "select": MessageLookupByLibrary.simpleMessage("Select"),
+    "selectImageSource": MessageLookupByLibrary.simpleMessage(
+      "Select Image Source",
+    ),
+    "serverError": MessageLookupByLibrary.simpleMessage(
+      "Server error occurred. Please try again later.",
+    ),
+    "takeNewPhoto": MessageLookupByLibrary.simpleMessage("Take a new photo"),
+    "timeoutError": MessageLookupByLibrary.simpleMessage(
+      "Connection timeout. Please try again.",
+    ),
     "trainingTitle": MessageLookupByLibrary.simpleMessage(
       "Flutter training to build real mobile applications",
     ),
+    "unauthorizedError": MessageLookupByLibrary.simpleMessage(
+      "Session expired. Please login again.",
+    ),
+    "unknownError": MessageLookupByLibrary.simpleMessage(
+      "An unexpected error occurred. Please try again later.",
+    ),
     "username": MessageLookupByLibrary.simpleMessage("Username"),
     "usernamePlaceholder": MessageLookupByLibrary.simpleMessage("thar22"),
+    "validationError": MessageLookupByLibrary.simpleMessage(
+      "Validation failed. Please review the fields.",
+    ),
     "welcomeMessage": MessageLookupByLibrary.simpleMessage(
       "Welcome Tharad Tech!",
     ),

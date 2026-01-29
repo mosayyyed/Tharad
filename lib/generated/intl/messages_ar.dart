@@ -32,6 +32,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "appTitle": MessageLookupByLibrary.simpleMessage("ثرد"),
     "apply": MessageLookupByLibrary.simpleMessage("تطبيق"),
     "arabic": MessageLookupByLibrary.simpleMessage("اللغة العربية"),
+    "badRequestError": MessageLookupByLibrary.simpleMessage(
+      "طلب غير صالح. يرجى التحقق من البيانات المدخلة.",
+    ),
+    "cacheError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ في التخزين المحلي.",
+    ),
+    "camera": MessageLookupByLibrary.simpleMessage("الكاميرا"),
+    "cancelledError": MessageLookupByLibrary.simpleMessage("تم إلغاء الطلب."),
+    "chooseFromGallery": MessageLookupByLibrary.simpleMessage(
+      "اختر من الصور الموجودة",
+    ),
     "confirmNewPassword": MessageLookupByLibrary.simpleMessage(
       "تأكيد كلمة المرور الجديدة",
     ),
@@ -48,9 +59,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "Tharad@gmail.com",
     ),
     "english": MessageLookupByLibrary.simpleMessage("English"),
+    "forbiddenError": MessageLookupByLibrary.simpleMessage(
+      "ليس لديك صلاحية للوصول لهذا المورد.",
+    ),
     "forgotPassword": MessageLookupByLibrary.simpleMessage(
       "هل نسيت كلمة المرور؟",
     ),
+    "gallery": MessageLookupByLibrary.simpleMessage("المعرض"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("لديك حساب؟ "),
     "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
     "language": MessageLookupByLibrary.simpleMessage("اللغة"),
@@ -61,7 +76,13 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "maxSize": MessageLookupByLibrary.simpleMessage("الحد الاقصي : 5MB"),
     "myAccount": MessageLookupByLibrary.simpleMessage("حسابي"),
+    "networkError": MessageLookupByLibrary.simpleMessage(
+      "لا يوجد اتصال بالإنترنت. يرجى التحقق من إعدادات الشبكة.",
+    ),
     "newPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+    "notFoundError": MessageLookupByLibrary.simpleMessage(
+      "المورد المطلوب غير موجود.",
+    ),
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
     "otpDescription": MessageLookupByLibrary.simpleMessage(
       "لاستكمال فتح حسابك ادخل رمز التحقق المرسل عبر البريد الإلكتروني",
@@ -79,11 +100,31 @@ class MessageLookup extends MessageLookupByLibrary {
     "rememberMe": MessageLookupByLibrary.simpleMessage("تذكرني"),
     "resendCode": MessageLookupByLibrary.simpleMessage("إعادة ارسال"),
     "saveChanges": MessageLookupByLibrary.simpleMessage("حفظ التغيرات"),
+    "select": MessageLookupByLibrary.simpleMessage("اختيار"),
+    "selectImageSource": MessageLookupByLibrary.simpleMessage(
+      "اختر مصدر الصورة",
+    ),
+    "serverError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ في الخادم. يرجى المحاولة لاحقاً.",
+    ),
+    "takeNewPhoto": MessageLookupByLibrary.simpleMessage("التقط صورة جديدة"),
+    "timeoutError": MessageLookupByLibrary.simpleMessage(
+      "انتهت مهلة الاتصال. يرجى المحاولة مرة أخرى.",
+    ),
     "trainingTitle": MessageLookupByLibrary.simpleMessage(
       "تدريب Flutter لبناء تطبيقات موبايل حقيقية",
     ),
+    "unauthorizedError": MessageLookupByLibrary.simpleMessage(
+      "انتهت صلاحية الجلسة. يرجى تسجيل الدخول مرة أخرى.",
+    ),
+    "unknownError": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ غير متوقع. يرجى المحاولة لاحقاً.",
+    ),
     "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "usernamePlaceholder": MessageLookupByLibrary.simpleMessage("thar22"),
+    "validationError": MessageLookupByLibrary.simpleMessage(
+      "فشل التحقق من البيانات. يرجى مراجعة الحقول.",
+    ),
     "welcomeMessage": MessageLookupByLibrary.simpleMessage("مرحبا ثراد تك !"),
     "workNature": MessageLookupByLibrary.simpleMessage(
       "طبيعة الشغل أثناء التدريب",

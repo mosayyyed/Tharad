@@ -48,5 +48,22 @@
     "oldPassword": "Old Password",
     "newPassword": "New Password",
     "confirmNewPassword": "Confirm New Password",
-    "saveChanges": "Save Changes"
+    "saveChanges": "Save Changes",
+    "networkError": "No internet connection. Please check your network settings.",
+    "timeoutError": "Connection timeout. Please try again.",
+    "cancelledError": "Request cancelled.",
+    "serverError": "Server error occurred. Please try again later.",
+    "notFoundError": "Requested resource not found.",
+    "unauthorizedError": "Session expired. Please login again.",
+    "forbiddenError": "You don't have permission to access this resource.",
+    "badRequestError": "Invalid request. Please check your input data.",
+    "validationError": "Validation failed. Please review the fields.",
+    "cacheError": "Local storage error occurred.",
+    "unknownError": "An unexpected error occurred. Please try again later.",
+    "selectImageSource": "Select Image Source",
+    "camera": "Camera",
+    "gallery": "Gallery",
+    "takeNewPhoto": "Take a new photo",
+    "chooseFromGallery": "Choose from existing photos",
+    "select": "Select"
 }

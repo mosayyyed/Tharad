@@ -463,6 +463,161 @@ class S {
       args: [],
     );
   }
+
+  /// `No internet connection. Please check your network settings.`
+  String get networkError {
+    return Intl.message(
+      'No internet connection. Please check your network settings.',
+      name: 'networkError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Connection timeout. Please try again.`
+  String get timeoutError {
+    return Intl.message(
+      'Connection timeout. Please try again.',
+      name: 'timeoutError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Request cancelled.`
+  String get cancelledError {
+    return Intl.message(
+      'Request cancelled.',
+      name: 'cancelledError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Server error occurred. Please try again later.`
+  String get serverError {
+    return Intl.message(
+      'Server error occurred. Please try again later.',
+      name: 'serverError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Requested resource not found.`
+  String get notFoundError {
+    return Intl.message(
+      'Requested resource not found.',
+      name: 'notFoundError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Session expired. Please login again.`
+  String get unauthorizedError {
+    return Intl.message(
+      'Session expired. Please login again.',
+      name: 'unauthorizedError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You don't have permission to access this resource.`
+  String get forbiddenError {
+    return Intl.message(
+      'You don\'t have permission to access this resource.',
+      name: 'forbiddenError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid request. Please check your input data.`
+  String get badRequestError {
+    return Intl.message(
+      'Invalid request. Please check your input data.',
+      name: 'badRequestError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Validation failed. Please review the fields.`
+  String get validationError {
+    return Intl.message(
+      'Validation failed. Please review the fields.',
+      name: 'validationError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Local storage error occurred.`
+  String get cacheError {
+    return Intl.message(
+      'Local storage error occurred.',
+      name: 'cacheError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An unexpected error occurred. Please try again later.`
+  String get unknownError {
+    return Intl.message(
+      'An unexpected error occurred. Please try again later.',
+      name: 'unknownError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Image Source`
+  String get selectImageSource {
+    return Intl.message(
+      'Select Image Source',
+      name: 'selectImageSource',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Camera`
+  String get camera {
+    return Intl.message('Camera', name: 'camera', desc: '', args: []);
+  }
+
+  /// `Gallery`
+  String get gallery {
+    return Intl.message('Gallery', name: 'gallery', desc: '', args: []);
+  }
+
+  /// `Take a new photo`
+  String get takeNewPhoto {
+    return Intl.message(
+      'Take a new photo',
+      name: 'takeNewPhoto',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose from existing photos`
+  String get chooseFromGallery {
+    return Intl.message(
+      'Choose from existing photos',
+      name: 'chooseFromGallery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select`
+  String get select {
+    return Intl.message('Select', name: 'select', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

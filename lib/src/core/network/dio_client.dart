@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
+import '../services/secure_storage_service.dart';
 import 'dio_factory.dart';
 
 class DioClient {
   late final Dio _dio;
 
-  DioClient(SharedPreferences prefs) {
-    _dio = DioFactory.create(prefs);
+  DioClient(SecureStorageService secureStorage) {
+    _dio = DioFactory.create(secureStorage);
   }
 
   Future<Response> get(

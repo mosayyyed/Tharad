@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 import '../constants/api_constants.dart';
+import '../services/secure_storage_service.dart';
 import 'interceptors/auth_interceptor.dart';
 
 class DioFactory {
   DioFactory._();
 
-  static Dio create(SharedPreferences prefs) {
+  static Dio create(SecureStorageService secureStorage) {
     final dio = Dio(
       BaseOptions(
         baseUrl: ApiConstants.baseUrl,
@@ -20,7 +20,7 @@ class DioFactory {
     );
 
     dio.interceptors.addAll([
-      AuthInterceptor(prefs),
+      AuthInterceptor(secureStorage),
       PrettyDioLogger(
         requestHeader: true,
         requestBody: true,

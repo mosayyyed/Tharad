@@ -1,9 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:tharad/src/core/services/secure_storage_service.dart';
 import 'package:tharad/src/features/auth/data/repositories/auth_repository.dart';
 
-import '../../../../core/constants/api_constants.dart';
 import '../../../../core/errors/error_handler.dart';
 import '../../../../core/errors/failures.dart';
 import '../datasources/auth_remote_data_source.dart';
@@ -14,9 +13,9 @@ import '../models/verify_otp_request_model.dart';
 
 class AuthRepositoryImpl implements AuthRepository {
   final AuthRemoteDataSource _remoteDataSource;
-  final SharedPreferences _prefs;
+  final SecureStorageService _secureStorage;
 
-  AuthRepositoryImpl(this._remoteDataSource, this._prefs);
+  AuthRepositoryImpl(this._remoteDataSource, this._secureStorage);
 
   @override
   Future<Either<Failure, RegisterResponseModel>> register(
@@ -97,7 +96,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, void>> saveAuthToken(String token) async {
     try {
-      await _prefs.setString(ApiConstants.tokenKey, token);
+      await _secureStorage.saveToken(token);
       return const Right(null);
     } catch (e) {
       return Left(
@@ -109,7 +108,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, String?>> getAuthToken() async {
     try {
-      final token = _prefs.getString(ApiConstants.tokenKey);
+      final token = await _secureStorage.getToken();
       return Right(token);
     } catch (e) {
       return Left(
@@ -121,7 +120,7 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, void>> removeAuthToken() async {
     try {
-      await _prefs.remove(ApiConstants.tokenKey);
+      await _secureStorage.removeToken();
       return const Right(null);
     } catch (e) {
       return Left(
@@ -133,8 +132,8 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<Either<Failure, bool>> isLoggedIn() async {
     try {
-      final token = _prefs.getString(ApiConstants.tokenKey);
-      return Right(token != null && token.isNotEmpty);
+      final hasToken = await _secureStorage.hasToken();
+      return Right(hasToken);
     } catch (e) {
       return Left(
         CacheFailure(message: 'Failed to check login status: ${e.toString()}'),

@@ -22,13 +22,16 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m0(fieldName) => "${fieldName} is required";
 
-  static String m1(length) => "Please enter a valid ${length}-digit code";
+  static String m1(maxSize) =>
+      "Image size exceeds ${maxSize}MB. Please choose a smaller image.";
 
-  static String m2(max) => "Must not exceed ${max} characters";
+  static String m2(length) => "Please enter a valid ${length}-digit code";
 
-  static String m3(min) => "Must be at least ${min} characters";
+  static String m3(max) => "Must not exceed ${max} characters";
 
-  static String m4(minLength) =>
+  static String m4(min) => "Must be at least ${min} characters";
+
+  static String m5(minLength) =>
       "Password must be at least ${minLength} characters";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
@@ -84,10 +87,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "gallery": MessageLookupByLibrary.simpleMessage("Gallery"),
     "haveAccount": MessageLookupByLibrary.simpleMessage("Have an account? "),
     "home": MessageLookupByLibrary.simpleMessage("Home"),
+    "imageTooLarge": m1,
     "invalidEmail": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid email address",
     ),
-    "invalidOtp": m1,
+    "invalidOtp": m2,
     "invalidPhoneNumber": MessageLookupByLibrary.simpleMessage(
       "Please enter a valid phone number",
     ),
@@ -101,9 +105,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "loginSuccessful": MessageLookupByLibrary.simpleMessage("Login Successful"),
-    "maxLengthError": m2,
+    "maxLengthError": m3,
     "maxSize": MessageLookupByLibrary.simpleMessage("Max size: 5MB"),
-    "minLengthError": m3,
+    "minLengthError": m4,
     "myAccount": MessageLookupByLibrary.simpleMessage("My Account"),
     "networkError": MessageLookupByLibrary.simpleMessage(
       "No internet connection. Please check your network settings.",
@@ -125,7 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Verification Code",
     ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
-    "passwordTooShort": m4,
+    "passwordTooShort": m5,
     "passwordsDoNotMatch": MessageLookupByLibrary.simpleMessage(
       "Passwords do not match",
     ),

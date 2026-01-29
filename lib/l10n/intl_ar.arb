@@ -113,5 +113,13 @@
             }
         }
     },
-    "invalidUrl": "يرجى إدخال رابط صالح"
+    "invalidUrl": "يرجى إدخال رابط صالح",
+    "imageTooLarge": "حجم الصورة يتجاوز {maxSize} ميجابايت. يرجى اختيار صورة أصغر.",
+    "@imageTooLarge": {
+        "placeholders": {
+            "maxSize": {
+                "type": "double"
+            }
+        }
+    }
 }

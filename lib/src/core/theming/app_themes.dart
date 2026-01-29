@@ -209,13 +209,12 @@ class AppTheme {
         color: AppColors.primary.withOpacity(0.5),
       ),
       errorMaxLines: 2,
-      errorStyle: TextStyle(
-        color: AppColors.error.withAlpha(180),
-        fontSize: 12.sp,
-        overflow: TextOverflow.ellipsis,
+      errorStyle: AppTextStyles.labelSmall.copyWith(
+        color: AppColors.error,
+        fontSize: 11.sp,
       ),
       filled: true,
-      fillColor: fillColor,
+      fillColor: const Color(0xFFF4F7F6),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8.r),
         borderSide: const BorderSide(color: Color(0xFFF0E6DE), width: 1),

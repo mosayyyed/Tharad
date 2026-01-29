@@ -2,9 +2,9 @@ import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tharad/src/core/services/image_picker_service.dart';
 import 'package:tharad/src/features/auth/data/datasources/auth_remote_data_source.dart';
+import 'package:tharad/src/features/auth/data/repositories/auth_repository.dart';
 import 'package:tharad/src/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
-import 'package:tharad/src/features/auth/presentation/cubits/otp_cubit/otp_cubit.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_cubit.dart';
 
 import '../network/dio_client.dart';

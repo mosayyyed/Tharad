@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tharad/src/core/constants/app_values.dart';
 
 import 'app_colors.dart';
-import 'app_styles.dart';
 import 'app_text_styles.dart';
 
 class AppTheme {
@@ -18,7 +17,7 @@ class AppTheme {
       scaffoldBackgroundColor: scaffoldBg,
       useMaterial3: true,
       colorScheme: scheme,
-      fontFamily: Styles.fontFamily,
+      fontFamily: AppTextStyles.fontFamily,
       appBarTheme: _appBarTheme(scheme),
       inputDecorationTheme: _inputDecorationTheme(
         fillColor: scheme.surface,
@@ -39,7 +38,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(borderRadius: radius),
           elevation: 0,
           shadowColor: Colors.transparent,
-          textStyle: TextStyle(fontFamily: Styles.fontFamily, fontSize: 14.sp),
+          textStyle: AppTextStyles.labelLarge,
         ),
       ),
       filledButtonTheme: FilledButtonThemeData(
@@ -51,7 +50,7 @@ class AppTheme {
           backgroundColor: scheme.primaryContainer,
           foregroundColor: scheme.onPrimaryContainer,
           shape: RoundedRectangleBorder(borderRadius: radius),
-          textStyle: TextStyle(fontFamily: Styles.fontFamily, fontSize: 14.sp),
+          textStyle: AppTextStyles.labelLarge,
         ),
       ),
       outlinedButtonTheme: OutlinedButtonThemeData(
@@ -64,7 +63,7 @@ class AppTheme {
           foregroundColor: scheme.primary,
           shape: RoundedRectangleBorder(borderRadius: radius),
           side: BorderSide(color: scheme.outline, width: 0.5),
-          textStyle: TextStyle(fontFamily: Styles.fontFamily, fontSize: 12.sp),
+          textStyle: AppTextStyles.bodySmall,
         ),
       ),
       buttonTheme: ButtonThemeData(
@@ -91,7 +90,7 @@ class AppTheme {
           shape: RoundedRectangleBorder(borderRadius: radius),
           elevation: 0,
           shadowColor: Colors.transparent,
-          textStyle: TextStyle(fontFamily: Styles.fontFamily, fontSize: 14.sp),
+          textStyle: AppTextStyles.labelLarge,
         ),
       ),
       listTileTheme: ListTileThemeData(
@@ -115,7 +114,7 @@ class AppTheme {
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: scheme.surface,
         surfaceTintColor: Colors.transparent,
-        // shape: RoundedRectangleBorder(borderRadius: radius),
+        shape: RoundedRectangleBorder(borderRadius: radius),
       ),
       expansionTileTheme: ExpansionTileThemeData(
         backgroundColor: scheme.surface,
@@ -153,8 +152,6 @@ class AppTheme {
 
   static ThemeData get lightTheme =>
       _buildTheme(_lightColorScheme, AppColors.lightBackground);
-  static ThemeData get darkTheme =>
-      _buildTheme(_darkColorScheme, AppColors.darkBackground);
 
   static const ColorScheme _lightColorScheme = ColorScheme.light(
     primary: AppColors.primary,
@@ -166,19 +163,6 @@ class AppTheme {
     surface: AppColors.lightSurface,
     onSurface: AppColors.textPrimary,
     outline: AppColors.greyLight,
-    shadow: AppColors.greyDark,
-  );
-
-  static const ColorScheme _darkColorScheme = ColorScheme.dark(
-    primary: AppColors.primary,
-    onPrimary: AppColors.textOnPrimary,
-    error: AppColors.error,
-    onError: Colors.white,
-    primaryContainer: AppColors.primaryEnd,
-    onPrimaryContainer: AppColors.textOnPrimary,
-    surface: AppColors.darkSurface,
-    onSurface: Colors.white,
-    outline: AppColors.grey,
     shadow: AppColors.greyDark,
   );
 
@@ -201,11 +185,13 @@ class AppTheme {
       surfaceTintColor: Colors.transparent,
       backgroundColor: colorScheme.surface,
 
-      titleTextStyle: Styles.textStyle14.copyWith(color: colorScheme.onSurface),
+      titleTextStyle: AppTextStyles.titleMedium.copyWith(
+        color: colorScheme.onSurface,
+      ),
       elevation: 0,
       scrolledUnderElevation: 0,
       centerTitle: true,
-      toolbarTextStyle: Styles.textStyle14.copyWith(
+      toolbarTextStyle: AppTextStyles.bodyMedium.copyWith(
         color: colorScheme.onSurface,
       ),
       actionsIconTheme: IconThemeData(color: colorScheme.onPrimaryContainer),
@@ -218,47 +204,40 @@ class AppTheme {
     required Color borderColor,
   }) {
     return InputDecorationTheme(
-      contentPadding: EdgeInsets.symmetric(
-        horizontal: AppPadding.p16.w,
-        vertical: AppPadding.p14.h,
+      contentPadding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 18.h),
+      hintStyle: AppTextStyles.labelSmall.copyWith(
+        color: AppColors.primary.withOpacity(0.5),
       ),
       errorMaxLines: 2,
-      errorStyle: TextStyle(
-        color: AppColors.error.withAlpha(180),
-        fontSize: 12.sp,
-        overflow: TextOverflow.ellipsis,
+      errorStyle: AppTextStyles.labelSmall.copyWith(
+        color: AppColors.error,
+        fontSize: 11.sp,
       ),
       filled: true,
-      fillColor: fillColor,
+      fillColor: const Color(0xFFF4F7F6),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.r),
-        borderSide: BorderSide.none,
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.r),
-        borderSide: BorderSide(color: borderColor, width: 1.5),
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: const BorderSide(color: Color(0xFFF0E6DE), width: 1),
       ),
       enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.r),
-        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: const BorderSide(color: Color(0xFFF0E6DE), width: 1),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: const BorderSide(color: Color(0xFF42867B), width: 1),
       ),
       errorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.r),
-        borderSide: const BorderSide(color: AppColors.error, width: 1.5),
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: const BorderSide(color: Colors.red, width: 1),
       ),
       focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(5.r),
-        borderSide: const BorderSide(color: AppColors.error, width: 1.5),
+        borderRadius: BorderRadius.circular(8.r),
+        borderSide: const BorderSide(color: Colors.red, width: 1),
       ),
-      labelStyle: Styles.textStyle12.copyWith(
+      labelStyle: AppTextStyles.bodySmall.copyWith(
         color: fillColor.computeLuminance() > 0.5 ? Colors.black : Colors.white,
         fontWeight: FontWeight.bold,
-        fontSize: 12.sp,
-      ),
-      hintStyle: Styles.textStyle12.copyWith(
-        color: fillColor.computeLuminance() > 0.5 ? Colors.black : Colors.white,
-        fontWeight: FontWeight.bold,
-        fontSize: 12.sp,
       ),
     );
   }

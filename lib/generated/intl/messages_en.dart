@@ -105,6 +105,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "login": MessageLookupByLibrary.simpleMessage("Login"),
     "loginFailed": MessageLookupByLibrary.simpleMessage("Login Failed"),
     "loginSuccessful": MessageLookupByLibrary.simpleMessage("Login Successful"),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "maxLengthError": m3,
     "maxSize": MessageLookupByLibrary.simpleMessage("Max size: 5MB"),
     "minLengthError": m4,
@@ -113,10 +114,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "No internet connection. Please check your network settings.",
     ),
     "newPassword": MessageLookupByLibrary.simpleMessage("New Password"),
+    "noChangesToSave": MessageLookupByLibrary.simpleMessage(
+      "No changes to save",
+    ),
     "notFoundError": MessageLookupByLibrary.simpleMessage(
       "Requested resource not found.",
     ),
     "oldPassword": MessageLookupByLibrary.simpleMessage("Old Password"),
+    "oldPasswordRequired": MessageLookupByLibrary.simpleMessage(
+      "Old password is required to change password",
+    ),
     "otpCode": MessageLookupByLibrary.simpleMessage("OTP Code"),
     "otpDescription": MessageLookupByLibrary.simpleMessage(
       "To complete opening your account, enter the verification code sent via email",
@@ -136,6 +143,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "profileImage": MessageLookupByLibrary.simpleMessage("Profile Image"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("Profile"),
+    "profileUpdateSuccess": MessageLookupByLibrary.simpleMessage(
+      "Profile updated successfully",
+    ),
     "registrationFailed": MessageLookupByLibrary.simpleMessage(
       "Registration Failed",
     ),
@@ -162,6 +172,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "trainingTitle": MessageLookupByLibrary.simpleMessage(
       "Flutter training to build real mobile applications",
     ),
+    "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
     "unauthorizedError": MessageLookupByLibrary.simpleMessage(
       "Session expired. Please login again.",
     ),

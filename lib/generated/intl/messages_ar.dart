@@ -101,6 +101,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "loginSuccessful": MessageLookupByLibrary.simpleMessage(
       "تم تسجيل الدخول بنجاح",
     ),
+    "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "maxLengthError": m3,
     "maxSize": MessageLookupByLibrary.simpleMessage("الحد الاقصي : 5MB"),
     "minLengthError": m4,
@@ -109,10 +110,16 @@ class MessageLookup extends MessageLookupByLibrary {
       "لا يوجد اتصال بالإنترنت. يرجى التحقق من إعدادات الشبكة.",
     ),
     "newPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور الجديدة"),
+    "noChangesToSave": MessageLookupByLibrary.simpleMessage(
+      "لا توجد تغييرات للحفظ",
+    ),
     "notFoundError": MessageLookupByLibrary.simpleMessage(
       "المورد المطلوب غير موجود.",
     ),
     "oldPassword": MessageLookupByLibrary.simpleMessage("كلمة المرور القديمة"),
+    "oldPasswordRequired": MessageLookupByLibrary.simpleMessage(
+      "كلمة المرور القديمة مطلوبة لتغيير كلمة المرور",
+    ),
     "otpCode": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
     "otpDescription": MessageLookupByLibrary.simpleMessage(
       "لاستكمال فتح حسابك ادخل رمز التحقق المرسل عبر البريد الإلكتروني",
@@ -128,6 +135,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumber": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "profileImage": MessageLookupByLibrary.simpleMessage("الصورة الشخصية"),
     "profileTitle": MessageLookupByLibrary.simpleMessage("الملف الشخصي"),
+    "profileUpdateSuccess": MessageLookupByLibrary.simpleMessage(
+      "تم تحديث الملف الشخصي بنجاح",
+    ),
     "registrationFailed": MessageLookupByLibrary.simpleMessage("فشل التسجيل"),
     "registrationSuccessful": MessageLookupByLibrary.simpleMessage(
       "تم التسجيل بنجاح",
@@ -152,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "trainingTitle": MessageLookupByLibrary.simpleMessage(
       "تدريب Flutter لبناء تطبيقات موبايل حقيقية",
     ),
+    "tryAgain": MessageLookupByLibrary.simpleMessage("حاول مرة أخرى"),
     "unauthorizedError": MessageLookupByLibrary.simpleMessage(
       "انتهت صلاحية الجلسة. يرجى تسجيل الدخول مرة أخرى.",
     ),

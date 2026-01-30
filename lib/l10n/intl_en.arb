@@ -121,5 +121,10 @@
                 "type": "double"
             }
         }
-    }
+    },
+    "tryAgain": "Try Again",
+    "oldPasswordRequired": "Old password is required to change password",
+    "profileUpdateSuccess": "Profile updated successfully",
+    "noChangesToSave": "No changes to save",
+    "logout": "Logout"
 }

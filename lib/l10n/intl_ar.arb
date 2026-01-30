@@ -121,5 +121,10 @@
                 "type": "double"
             }
         }
-    }
+    },
+    "tryAgain": "حاول مرة أخرى",
+    "oldPasswordRequired": "كلمة المرور القديمة مطلوبة لتغيير كلمة المرور",
+    "profileUpdateSuccess": "تم تحديث الملف الشخصي بنجاح",
+    "noChangesToSave": "لا توجد تغييرات للحفظ",
+    "logout": "تسجيل الخروج"
 }

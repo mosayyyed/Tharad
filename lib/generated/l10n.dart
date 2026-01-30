@@ -753,6 +753,46 @@ class S {
       args: [maxSize],
     );
   }
+
+  /// `Try Again`
+  String get tryAgain {
+    return Intl.message('Try Again', name: 'tryAgain', desc: '', args: []);
+  }
+
+  /// `Old password is required to change password`
+  String get oldPasswordRequired {
+    return Intl.message(
+      'Old password is required to change password',
+      name: 'oldPasswordRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile updated successfully`
+  String get profileUpdateSuccess {
+    return Intl.message(
+      'Profile updated successfully',
+      name: 'profileUpdateSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No changes to save`
+  String get noChangesToSave {
+    return Intl.message(
+      'No changes to save',
+      name: 'noChangesToSave',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

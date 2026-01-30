@@ -11,6 +11,7 @@ class ApiConstants {
   static const String logout = 'auth/logout';
   static const String verifyOtp = 'otp';
   static const String profileDetails = 'profile-details';
+  static const String updateProfile = 'Update-Profile';
 
   /// Timeouts
   static const Duration connectTimeout = Duration(seconds: 60);

@@ -11,6 +11,7 @@ import 'package:tharad/src/core/theming/app_text_styles.dart';
 class ProfileImageUploadField extends StatelessWidget {
   final VoidCallback? onTap;
   final String? imagePath;
+  final String? imageUrl;
   final VoidCallback? onRemove;
   final String? errorText;
 
@@ -18,16 +19,18 @@ class ProfileImageUploadField extends StatelessWidget {
     super.key,
     this.onTap,
     this.imagePath,
+    this.imageUrl,
     this.onRemove,
     this.errorText,
   });
 
   bool get _hasError => errorText != null && errorText!.isNotEmpty;
+  bool get _hasLocalImage => imagePath != null && imagePath!.isNotEmpty;
+  bool get _hasNetworkImage => imageUrl != null && imageUrl!.isNotEmpty;
+  bool get _hasAnyImage => _hasLocalImage || _hasNetworkImage;
 
   @override
   Widget build(BuildContext context) {
-    final bool hasImage = imagePath != null && imagePath!.isNotEmpty;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -41,7 +44,7 @@ class ProfileImageUploadField extends StatelessWidget {
 
         GestureDetector(
           onTap: onTap,
-          child: hasImage
+          child: _hasAnyImage
               ? _buildImagePreview()
               : _buildUploadPlaceholder(context),
         ),
@@ -83,30 +86,43 @@ class ProfileImageUploadField extends StatelessWidget {
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(4.r),
-            child: Image.file(
-              File(imagePath!),
-              height: 90.h,
-              fit: BoxFit.cover,
-              errorBuilder: (context, error, stackTrace) {
-                return Container(
-                  width: 170.w,
-                  height: 90.h,
-                  color: const Color(0xFFF4F7F6),
-                  child: Center(
-                    child: Icon(
-                      Icons.broken_image_rounded,
-                      size: 30.sp,
-                      color: Colors.grey,
-                    ),
+            child: _hasLocalImage
+                ? Image.file(
+                    File(imagePath!),
+                    height: 90.h,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) =>
+                        _buildErrorPlaceholder(),
+                  )
+                : Image.network(
+                    imageUrl!,
+                    height: 90.h,
+                    fit: BoxFit.cover,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return Container(
+                        width: 170.w,
+                        height: 90.h,
+                        color: const Color(0xFFF4F7F6),
+                        child: Center(
+                          child: CircularProgressIndicator(
+                            value: loadingProgress.expectedTotalBytes != null
+                                ? loadingProgress.cumulativeBytesLoaded /
+                                      loadingProgress.expectedTotalBytes!
+                                : null,
+                            strokeWidth: 2.w,
+                          ),
+                        ),
+                      );
+                    },
+                    errorBuilder: (context, error, stackTrace) =>
+                        _buildErrorPlaceholder(),
                   ),
-                );
-              },
-            ),
           ),
         ),
         SizedBox(width: 4.w),
 
-        if (onRemove != null)
+        if (onRemove != null && _hasLocalImage)
           GestureDetector(
             onTap: onRemove,
             child: Container(
@@ -119,6 +135,21 @@ class ProfileImageUploadField extends StatelessWidget {
             ),
           ),
       ],
+    );
+  }
+
+  Widget _buildErrorPlaceholder() {
+    return Container(
+      width: 170.w,
+      height: 90.h,
+      color: const Color(0xFFF4F7F6),
+      child: Center(
+        child: Icon(
+          Icons.broken_image_rounded,
+          size: 30.sp,
+          color: Colors.grey,
+        ),
+      ),
     );
   }
 

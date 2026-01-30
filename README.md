@@ -14,9 +14,9 @@ Flutter application for Tharad Tech Training Program with authentication, profil
 
 | | | |
 |---|---|---|
-| ![](https://github.com/user-attachments/assets/2b2febfd-3542-41c8-8225-098d3d18412f) | ![](https://github.com/user-attachments/assets/a7bb8d53-6f3e-4247-9f8a-33cc1fc17e20) | ![](https://github.com/user-attachments/assets/8976be2a-f7bf-43fb-ab6f-d9a3a6beb566) |
-| ![](https://github.com/user-attachments/assets/d063b070-0f83-4633-9bb7-d0ca54f2bd16) | ![](https://github.com/user-attachments/assets/a9f4b742-7e1c-44d8-ace1-6cb3a93dcab4) | ![](https://github.com/user-attachments/assets/b4a92eba-a024-4724-b576-2b69f7b91876) |
-| ![](https://github.com/user-attachments/assets/c3992a80-6df9-4a4b-beb5-cff6b42e2e4c) |  |  |
+| ![](https://github.com/user-attachments/assets/d063b070-0f83-4633-9bb7-d0ca54f2bd16) | ![](https://github.com/user-attachments/assets/8976be2a-f7bf-43fb-ab6f-d9a3a6beb566) | ![](https://github.com/user-attachments/assets/a7bb8d53-6f3e-4247-9f8a-33cc1fc17e20) |
+| ![](https://github.com/user-attachments/assets/2b2febfd-3542-41c8-8225-098d3d18412f) | ![](https://github.com/user-attachments/assets/c3992a80-6df9-4a4b-beb5-cff6b42e2e4c) | ![](https://github.com/user-attachments/assets/b4a92eba-a024-4724-b576-2b69f7b91876) |
+| ![](https://github.com/user-attachments/assets/a9f4b742-7e1c-44d8-ace1-6cb3a93dcab4) |  |  |
 
 ## 🛠️ Tech Stack
 

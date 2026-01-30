@@ -36,10 +36,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "aboutTraining": MessageLookupByLibrary.simpleMessage("About Training"),
-    "aboutTrainingDescription": MessageLookupByLibrary.simpleMessage(
-      "Flutter training is not a traditional educational course, it is a practical program designed to prepare the trainee to actually work on real projects within the company.\nDuring the training period, the trainee will be part of the work team, dealing with real code, real requirements, and daily problems solved in existing projects, not just experimental applications or learning examples.\nThe training depends on the trainee:\n• Understands the way of work inside the company\n• Commits to professional code writing standards\n• Deals with Git and version control\n• Works within a team and receives continuous feedback\nThe main goal of the training is to transform the trainee from a learner level to a Flutter developer capable of joining any project and working on it confidently.",
-    ),
     "allowedFiles": MessageLookupByLibrary.simpleMessage(
       "Allowed files: JPEG, PNG",
     ),
@@ -169,9 +165,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "timeoutError": MessageLookupByLibrary.simpleMessage(
       "Connection timeout. Please try again.",
     ),
-    "trainingTitle": MessageLookupByLibrary.simpleMessage(
-      "Flutter training to build real mobile applications",
-    ),
     "tryAgain": MessageLookupByLibrary.simpleMessage("Try Again"),
     "unauthorizedError": MessageLookupByLibrary.simpleMessage(
       "Session expired. Please login again.",
@@ -185,25 +178,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Validation failed. Please review the fields.",
     ),
     "welcomeMessage": MessageLookupByLibrary.simpleMessage(
-      "Welcome Tharad Tech!",
-    ),
-    "workNature": MessageLookupByLibrary.simpleMessage(
-      "Work Nature During Training",
-    ),
-    "workNatureItem1": MessageLookupByLibrary.simpleMessage(
-      "Participating in the development of real mobile applications",
-    ),
-    "workNatureItem2": MessageLookupByLibrary.simpleMessage(
-      "Implementing required features in existing projects",
-    ),
-    "workNatureItem3": MessageLookupByLibrary.simpleMessage(
-      "Dealing with real APIs and backends",
-    ),
-    "workNatureItem4": MessageLookupByLibrary.simpleMessage(
-      "Fixing bugs and improving performance",
-    ),
-    "workNatureItem5": MessageLookupByLibrary.simpleMessage(
-      "Committing to clean code and clear architecture",
+      "Welcome to Tharad Tech!",
     ),
   };
 }

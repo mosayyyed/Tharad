@@ -1,16 +1,66 @@
-# tharad
+# Tharad - Flutter Training App
 
-A new Flutter project.
+Flutter application for Tharad Tech Training Program with authentication, profile management, caching, and multi-language support.
 
-## Getting Started
+## 📱 Features
 
-This project is a starting point for a Flutter application.
+- ✅ Login & Registration with OTP verification
+- ✅ Profile management with image upload (Camera/Gallery, max 5MB)
+- ✅ Offline support with Hive caching
+- ✅ Multi-language (Arabic/English)
+- ✅ Persistent login
 
-A few resources to get you started if this is your first Flutter project:
+## 📸 Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+|  |  |  |
+|--|--|--|
+| ![]() | ![]() | ![]() |
+| ![]() | ![]() | ![]() |
+| ![]() | ![]() | ![]() |
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| State Management | flutter_bloc / Cubit |
+| API Client | Dio |
+| Caching | Hive, Flutter Secure Storage |
+| Navigation | go_router |
+| DI | get_it |
+
+## 🚀 Getting Started
+
+```bash
+# Clone
+git clone https://github.com/mosayyyed/tharad.git
+
+# Install
+flutter pub get
+
+# Generate code
+dart run build_runner build --delete-conflicting-outputs
+
+# Run
+flutter run
+```
+
+## 🔗 API
+
+**Base URL:** `https://flutter.tharadtech.com/api/`
+
+| Endpoint | Method | Description |
+|----------|--------|-------------|
+| `/register` | POST | Registration |
+| `/login` | POST | Login |
+| `/verify-otp` | POST | OTP verification |
+| `/profile-details` | GET | Get profile |
+| `/update-profile` | POST | Update profile |
+
+## 🎨 Design
+
+- [Figma Design](https://www.figma.com/design/PKJg9JtHqKmkZpovJprzEz/Flutter-Task)
+- [Postman Collection](https://drive.google.com/file/d/1B33oRnYC0wy5y87OSfcgtjyJ-ByBSg8Z/view)
+
+## 📄 License
+
+Training project for Tharad Tech.

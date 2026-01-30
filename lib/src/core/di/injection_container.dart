@@ -7,6 +7,9 @@ import 'package:tharad/src/features/auth/data/repositories/auth_repository.dart'
 import 'package:tharad/src/features/auth/data/repositories/auth_repository_impl.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/login_cubit/login_cubit.dart';
 import 'package:tharad/src/features/auth/presentation/cubits/register_cubit/register_cubit.dart';
+import 'package:tharad/src/features/home/data/datasources/home_remote_data_source.dart';
+import 'package:tharad/src/features/home/data/repositories/home_repository.dart';
+import 'package:tharad/src/features/home/presentation/cubits/home_cubit.dart';
 import 'package:tharad/src/features/profile/data/datasources/profile_remote_data_source.dart';
 import 'package:tharad/src/features/profile/data/repositories/profile_repository.dart';
 import 'package:tharad/src/features/profile/data/repositories/profile_repository_impl.dart';
@@ -64,4 +67,19 @@ Future<void> initializeServiceLocator() async {
   sl.registerFactory<ProfileCubit>(
     () => ProfileCubit(sl<ProfileRepository>(), sl<AuthRepository>()),
   );
+
+  // ============================================================================
+  // Home Feature
+  // ============================================================================
+
+  // Data Sources
+  sl.registerLazySingleton<HomeRemoteDataSource>(
+    () => HomeRemoteDataSourceImpl(sl()),
+  );
+
+  // Repositories
+  sl.registerLazySingleton<HomeRepository>(() => HomeRepositoryImpl(sl()));
+
+  // Cubits
+  sl.registerFactory<HomeCubit>(() => HomeCubit(sl()));
 }

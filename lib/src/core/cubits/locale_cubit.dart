@@ -1,18 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
+import '../network/dio_factory.dart';
+
 class LocaleCubit extends HydratedCubit<Locale> {
-  LocaleCubit() : super(const Locale('ar'));
+  LocaleCubit() : super(const Locale('ar')) {
+    // Initialize language interceptor with current locale
+    DioFactory.languageInterceptor.updateLanguage(state.languageCode);
+  }
 
   void changeLocale(Locale newLocale) {
+    DioFactory.languageInterceptor.updateLanguage(newLocale.languageCode);
     emit(newLocale);
   }
 
   void toggleLocale() {
     if (state.languageCode == 'ar') {
-      emit(const Locale('en'));
+      changeLocale(const Locale('en'));
     } else {
-      emit(const Locale('ar'));
+      changeLocale(const Locale('ar'));
     }
   }
 
@@ -21,7 +27,9 @@ class LocaleCubit extends HydratedCubit<Locale> {
 
   @override
   Locale? fromJson(Map<String, dynamic> json) {
-    return Locale(json['languageCode'] as String);
+    final locale = Locale(json['languageCode'] as String);
+    DioFactory.languageInterceptor.updateLanguage(locale.languageCode);
+    return locale;
   }
 
   @override

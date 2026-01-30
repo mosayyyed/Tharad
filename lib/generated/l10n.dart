@@ -319,101 +319,11 @@ class S {
     return Intl.message('My Account', name: 'myAccount', desc: '', args: []);
   }
 
-  /// `Welcome Tharad Tech!`
+  /// `Welcome to Tharad Tech!`
   String get welcomeMessage {
     return Intl.message(
-      'Welcome Tharad Tech!',
+      'Welcome to Tharad Tech!',
       name: 'welcomeMessage',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Flutter training to build real mobile applications`
-  String get trainingTitle {
-    return Intl.message(
-      'Flutter training to build real mobile applications',
-      name: 'trainingTitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `About Training`
-  String get aboutTraining {
-    return Intl.message(
-      'About Training',
-      name: 'aboutTraining',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Work Nature During Training`
-  String get workNature {
-    return Intl.message(
-      'Work Nature During Training',
-      name: 'workNature',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Flutter training is not a traditional educational course, it is a practical program designed to prepare the trainee to actually work on real projects within the company.\nDuring the training period, the trainee will be part of the work team, dealing with real code, real requirements, and daily problems solved in existing projects, not just experimental applications or learning examples.\nThe training depends on the trainee:\n• Understands the way of work inside the company\n• Commits to professional code writing standards\n• Deals with Git and version control\n• Works within a team and receives continuous feedback\nThe main goal of the training is to transform the trainee from a learner level to a Flutter developer capable of joining any project and working on it confidently.`
-  String get aboutTrainingDescription {
-    return Intl.message(
-      'Flutter training is not a traditional educational course, it is a practical program designed to prepare the trainee to actually work on real projects within the company.\nDuring the training period, the trainee will be part of the work team, dealing with real code, real requirements, and daily problems solved in existing projects, not just experimental applications or learning examples.\nThe training depends on the trainee:\n• Understands the way of work inside the company\n• Commits to professional code writing standards\n• Deals with Git and version control\n• Works within a team and receives continuous feedback\nThe main goal of the training is to transform the trainee from a learner level to a Flutter developer capable of joining any project and working on it confidently.',
-      name: 'aboutTrainingDescription',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Participating in the development of real mobile applications`
-  String get workNatureItem1 {
-    return Intl.message(
-      'Participating in the development of real mobile applications',
-      name: 'workNatureItem1',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Implementing required features in existing projects`
-  String get workNatureItem2 {
-    return Intl.message(
-      'Implementing required features in existing projects',
-      name: 'workNatureItem2',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Dealing with real APIs and backends`
-  String get workNatureItem3 {
-    return Intl.message(
-      'Dealing with real APIs and backends',
-      name: 'workNatureItem3',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Fixing bugs and improving performance`
-  String get workNatureItem4 {
-    return Intl.message(
-      'Fixing bugs and improving performance',
-      name: 'workNatureItem4',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Committing to clean code and clear architecture`
-  String get workNatureItem5 {
-    return Intl.message(
-      'Committing to clean code and clear architecture',
-      name: 'workNatureItem5',
       desc: '',
       args: [],
     );

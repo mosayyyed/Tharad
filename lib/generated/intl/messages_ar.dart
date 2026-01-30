@@ -36,10 +36,6 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "aboutTraining": MessageLookupByLibrary.simpleMessage("عن التدريب"),
-    "aboutTrainingDescription": MessageLookupByLibrary.simpleMessage(
-      "تدريب Flutter ده مش كورس تعليمي تقليدي، ده برنامج عملي معمول علشان يجهز المتدرب يشتغل فعليًا على مشاريع حقيقية داخل الشركة.\nخلال فترة التدريب، المتدرب هيكون جزء من فريق العمل، وهيتعامل مع كود حقيقي، متطلبات حقيقية، ومشاكل بتتحل يوميًا في مشاريع قائمة بالفعل مش مجرد تطبيقات تجريبية أو أمثلة للتعلم.\nالتدريب بيعتمد على إن المتدرب:\n• يفهم طريقة الشغل داخل الشركة\n• يلتزم بمعايير كتابة كود احترافي\n• يتعامل مع Git وإدارة الإصدارات\n• يشتغل ضمن فريق ويستقبل Feedback بشكل مستمر\nالهدف الأساسي من التدريب هو تحويل المتدرب من مستوى متعلم إلى مطور Flutter قادر يدخل أي مشروع ويشتغل عليه بثقة.",
-    ),
     "allowedFiles": MessageLookupByLibrary.simpleMessage(
       "الملفات المسموح بيها : JPEG , PNG",
     ),
@@ -159,9 +155,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "timeoutError": MessageLookupByLibrary.simpleMessage(
       "انتهت مهلة الاتصال. يرجى المحاولة مرة أخرى.",
     ),
-    "trainingTitle": MessageLookupByLibrary.simpleMessage(
-      "تدريب Flutter لبناء تطبيقات موبايل حقيقية",
-    ),
     "tryAgain": MessageLookupByLibrary.simpleMessage("حاول مرة أخرى"),
     "unauthorizedError": MessageLookupByLibrary.simpleMessage(
       "انتهت صلاحية الجلسة. يرجى تسجيل الدخول مرة أخرى.",
@@ -173,25 +166,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "usernamePlaceholder": MessageLookupByLibrary.simpleMessage("thar22"),
     "validationError": MessageLookupByLibrary.simpleMessage(
       "فشل التحقق من البيانات. يرجى مراجعة الحقول.",
-    ),
-    "welcomeMessage": MessageLookupByLibrary.simpleMessage("مرحبا ثراد تك !"),
-    "workNature": MessageLookupByLibrary.simpleMessage(
-      "طبيعة الشغل أثناء التدريب",
-    ),
-    "workNatureItem1": MessageLookupByLibrary.simpleMessage(
-      "المشاركة في تطوير تطبيقات موبايل حقيقية",
-    ),
-    "workNatureItem2": MessageLookupByLibrary.simpleMessage(
-      "تنفيذ Features مطلوبة في مشاريع قائمة",
-    ),
-    "workNatureItem3": MessageLookupByLibrary.simpleMessage(
-      "التعامل مع APIs و Backends فعلية",
-    ),
-    "workNatureItem4": MessageLookupByLibrary.simpleMessage(
-      "إصلاح Bugs وتحسين الأداء",
-    ),
-    "workNatureItem5": MessageLookupByLibrary.simpleMessage(
-      "الالتزام بـ Clean Code و Architecture واضحة",
     ),
   };
 }
